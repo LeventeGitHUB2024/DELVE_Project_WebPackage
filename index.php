@@ -40,7 +40,7 @@ session_start(); // Indítsd el a session-t
         </label>
       </div>
 
-    <button type="submit" onclick="passwordChecker()" id="button">Register</button>
+    <button type="submit" onclick='passwordChecker()' id="button">Register</button>
     <div class="register">
         <p>You already have an account? <a href="login.php">Log in here</a></p>
       </div>

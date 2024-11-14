@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Ha nincsenek hibák, folytatjuk a regisztrációval
-    $stmt = $pdo->prepare("INSERT INTO users (username, E_mail_address, password) VALUES (:username, :email, :password)");
+    $stmt = $pdo->prepare("INSERT INTO players_pyr (username, E_mail_address, password) VALUES (:username, :email, :password)");
     $stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashedPassword]);
     
     // Sikeres regisztráció után átirányítás
