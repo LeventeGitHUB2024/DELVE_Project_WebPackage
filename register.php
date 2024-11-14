@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "The password must contain  at least 1 special character.";
     } elseif ($password !== $password2) { 
         $errors[] = "Both passwords need to be the same!";
-    }
+    }    
     
     // Ellenőrzés, hogy a felhasználónév és az e-mail cím egyedi-e
     $pdo = db();

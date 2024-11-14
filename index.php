@@ -40,18 +40,16 @@ session_start(); // Indítsd el a session-t
         </label>
       </div>
 
-    <button type="submit" onclick='passwordChecker()' id="button">Register</button>
+    <button type="submit" id="button">Register</button>
     <div class="register">
         <p>You already have an account? <a href="login.php">Log in here</a></p>
       </div>
     </form>
-
     <!-- Hibák megjelenítése -->
     <?php
     if (isset($_SESSION['errors'])) {
         foreach ($_SESSION['errors'] as $error) {
             echo "<div class='alert alert-error'>
-            <p id='pwcheck'></p>
     <div class='closebtn' onclick='removeAlert(this)';'>
     &times;</div>$error</div>";
         }
@@ -59,6 +57,7 @@ session_start(); // Indítsd el a session-t
         unset($_SESSION['errors']);
     }
     ?>
+    <!--<p id='pwcheck' style='color: white'></p>-->
   </div>
 </body>
 </html>

@@ -1,0 +1,7 @@
+miket kellene fixelni
+
+index oldalon ha nem egyezik meg a 2 jelszó mező értéke hiba kiírása vagy js vagy php
+ha ez megvan kiirathatjuk a hibákat a login oldalon is
+login oldalon fixelni a remember me-t mert csak akkor lehet bejelentkezni ha be van kattintva és nem is jegyzi meg
+sem a username-t sem a jelszót
+emellett implementálni a forgot password-öt

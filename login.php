@@ -83,6 +83,19 @@ $password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
         <button type="submit" id="gomb">Log in</button>
     <p id="white-text3">Don't have an account? <a href="index.php">Register here</a></p>
     </form>
+    <!--test jellegű php rész-->
+    <?php
+    if (isset($_SESSION['errors'])) {
+        foreach ($_SESSION['errors'] as $error) {
+            echo "<div class='alert alert-error'>
+    <div class='closebtn' onclick='removeAlert(this)';'>
+    &times;</div>$error</div>";
+        }
+        // Üresítsd ki a hibákat, hogy ne jelenjenek meg újra
+        unset($_SESSION['errors']);
+    }
+    ?>
   </div>
 </body>
 </html>
+
