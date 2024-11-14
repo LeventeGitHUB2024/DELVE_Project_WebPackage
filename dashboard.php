@@ -1,0 +1,43 @@
+<?php
+session_start();
+require 'db.php';
+
+// Ellenőrizd, hogy a felhasználó be van-e jelentkezve
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Kiírhatod a felhasználó nevét vagy e-mail címét
+$pdo = db();
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
+$stmt->execute(['id' => $_SESSION['user_id']]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+?>
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELVE User Dashboard</title>
+    <link rel="stylesheet" href="./css/welcomeStyle.css">
+    <link rel="shortcut icon" href="../favico2.png" type="image/png">
+</head>
+<body>
+<img src="./img/delve_logo.png" alt="Delve_logo" id="kep">
+    
+    <h1 id="wlc">Welcome <?php echo htmlspecialchars($user['username']); ?>!</h1>
+    <a href="logout.php">
+    <button>
+    <span class="transition"></span>
+    <span class="gradient"></span>
+    <span class="label">Sign out</span>
+    </button>
+    </a>
+    
+    <p id="info">Here you can have a look at your statistics and your account settings.</p>
+    <div id="hatter">
+    </div>  
+</body>
+</html>
