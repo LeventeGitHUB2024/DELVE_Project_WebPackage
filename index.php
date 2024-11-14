@@ -35,12 +35,12 @@ session_start(); // Indítsd el a session-t
       <div id="tos">
       <label for="agree">  
       <input type="checkbox" name="agree" class="agree" id="box" value="checked" required/> 
-        <p id="white-text3">I agree with the            
+        <p id="white-text">I agree with the            
         <a href="./importált_masikbol/TOS.html" title="term of services">term of services</a></p>
         </label>
       </div>
 
-    <button type="submit" id="button">Register</button>
+    <button type="submit" onclick="passwordChecker()" id="button">Register</button>
     <div class="register">
         <p>You already have an account? <a href="login.php">Log in here</a></p>
       </div>
@@ -51,6 +51,7 @@ session_start(); // Indítsd el a session-t
     if (isset($_SESSION['errors'])) {
         foreach ($_SESSION['errors'] as $error) {
             echo "<div class='alert alert-error'>
+            <p id='pwcheck'></p>
     <div class='closebtn' onclick='removeAlert(this)';'>
     &times;</div>$error</div>";
         }

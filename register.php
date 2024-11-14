@@ -5,7 +5,7 @@ $errors = [];
 // Ellenőrizzük, hogy POST kérés érkezett-e
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
-    $email = $_POST['email'] ?? '';
+    $email = $_POST['E_mail_address'] ?? '';  // Módosított mezőnév
     $password = $_POST['password'] ?? '';
     $password2 = $_POST['password2'] ?? '';
 
@@ -33,12 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($password !== $password2) { 
         $errors[] = "Both passwords need to be the same!";
     }
-
     
     // Ellenőrzés, hogy a felhasználónév és az e-mail cím egyedi-e
     $pdo = db();
 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username OR email = :email");
+    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :username OR E_mail_address = :email");     // Módosított mezőnév
     $stmt->execute(['username' => $username, 'email' => $email]);
     
     if ($stmt->fetch()) {
@@ -58,8 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Ha nincsenek hibák, folytatjuk a regisztrációval
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+    $stmt = $pdo->prepare("INSERT INTO users (username, E_mail_address, password) VALUES (:username, :email, :password)");
     $stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashedPassword]);
     
     // Sikeres regisztráció után átirányítás

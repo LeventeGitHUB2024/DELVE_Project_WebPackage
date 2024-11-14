@@ -16,13 +16,17 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE User Dashboard</title>
     <link rel="stylesheet" href="./css/welcomeStyle.css">
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script async src="./UCP_hez_template_files/js/main.js"></script>
 </head>
 <body>
 <img src="./img/delve_logo.png" alt="Delve_logo" id="kep">
@@ -35,7 +39,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <span class="label">Sign out</span>
     </button>
     </a>
-    
     <p id="info">Here you can have a look at your statistics and your account settings.</p>
     <div id="hatter">
     </div>  

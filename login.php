@@ -77,11 +77,11 @@ $password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
     <div id="remember">
       <label for="remember_me">  
       <input type="checkbox" name="remember_me" class="remember" id="remember_me" value="checked" <?php if(isset($_COOKIE['username'])) echo 'checked'; ?>/> 
-        <p id="white-text">Remember me</p>
+        <p id="white-text2">Remember me</p>
       </label>
     </div>
         <button type="submit" id="gomb">Log in</button>
-    <p id="white-text2">Don't have an account? <a href="index.php">Register here</a></p>
+    <p id="white-text3">Don't have an account? <a href="index.php">Register here</a></p>
     </form>
   </div>
 </body>

@@ -1,18 +1,21 @@
-/*document.getElementById("register").onsubmit = function(event) {
+function passwordChecker(){
+document.getElementById("register").onsubmit = function(event) {
     if (document.getElementById("password").value !== document.getElementById("password2").value) {
-        alert("Both passwords need to be the same!");
+      document.getElementById("pwcheck").innerText==  
+      ("Both passwords need to be the same!");
         event.preventDefault(); // Megakadályozza a form elküldését
     }
-};*/
+  }
+};
 
 /*document.getElementById("register").onsubmit = function(event) {
   if (document.getElementById("password").value !== document.getElementById("password2").value) {
-      const alertDiv = document.getElementsByClassName('alert alert-error')[0];
+      const alert = document.getElementsByClassName('alert alert-error');
 
       const newError = document.createElement('p');
       newError.textContent = "Both passwords need to be the same!";
 
-      alertDiv.appendChild(newError);
+      alert.appendChild(newError);
 
       event.preventDefault();
   }
