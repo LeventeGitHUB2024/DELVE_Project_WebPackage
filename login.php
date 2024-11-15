@@ -12,30 +12,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = db();
 
     // Ellenőrizd, hogy a felhasználónév vagy e-mail cím létezik-e
-    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :usernameOrEmail OR email = :usernameOrEmail");
+    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :usernameOrEmail OR E_mail_address = :usernameOrEmail");
     $stmt->execute(['usernameOrEmail' => $usernameOrEmail]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Ha nincs találat
     if (!$user) {
-        $errors[] = "Nincs fiókod, regisztrálj először!";
+        $errors[] = "You don't have an account, create one before logging in, it might just help! 😉";
     } else {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
 
-                
                 header("Location: dashboard.php");
                 exit;
             } else {
-                $errors[] = "Hibás jelszó!";}
+                $errors[] = "Wrong or just simply incorrect password";}
     }   
-}
-
-// Hibaüzenetek megjelenítése
-if ($errors) {
-    foreach ($errors as $error) {
-        echo "<p style='color: red;'>$error</p>";
-    }
 }
 ?>
 
@@ -82,17 +74,20 @@ if ($errors) {
         <button type="submit" id="gomb">Log in</button>
     <p id="white-text3">Don't have an account? <a href="index.php">Register here</a></p>
     </form>
+    
     <?php
-    if (isset($_SESSION['errors'])) {
-        foreach ($_SESSION['errors'] as $error) {
-            echo "<div class='alert alert-error'>
+      // Hibaüzenetek megjelenítése
+    if ($errors) {
+    foreach ($errors as $error) {
+        echo "<div class='alert alert-error'>
     <div class='closebtn' onclick='removeAlert(this)';'>
     &times;</div>$error</div>";
-        }
-        // Üresítsd ki a hibákat, hogy ne jelenjenek meg újra
-        unset($_SESSION['errors']);
     }
+     // Üresítsd ki a hibákat, hogy ne jelenjenek meg újra
+     unset($_SESSION['errors']);
+  }
     ?>
+
   </div>
 </body>
 </html>
