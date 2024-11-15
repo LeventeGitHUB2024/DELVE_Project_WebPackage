@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: dashboard.php");
                 exit;
             } else {
-                $errors[] = "Wrong or just simply incorrect password";}
+                $errors[] = "Wrong or just simply incorrect password!";}
     }   
 }
 ?>
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>DELVE Login</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
-    <script async src="./importált_masikbol/script.js"></script>
+    <script async src="./importált_masikbol/script_login.js"></script>
 </head>
 <body>
   <div class="wrapper">

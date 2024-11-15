@@ -51,11 +51,13 @@ a:hover {
     text-align: center;
 }
 
+#atiranyitas{
+    text-align: center;
+}
+
 #login{
     font-size: 30px;
     color: cadetblue;
-    text-align: center;
-    margin-left: 25em;
 }
 
 #login:hover{

@@ -9,7 +9,7 @@ session_start(); // Indítsd el a session-t
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
     <title>DELVE Registration</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script async src="./importált_masikbol/script.js"></script>
+    <script async src="./importált_masikbol/script_registration.js"></script>
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
 </head>
 <body>
