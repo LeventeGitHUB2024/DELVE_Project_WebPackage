@@ -7,13 +7,12 @@ $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usernameOrEmail = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
-    $rememberMe = isset($_POST['remember_me']); // Ellenőrizzük a checkbox állapotát
 
     // Kapcsolódás az adatbázishoz
     $pdo = db();
 
     // Ellenőrizd, hogy a felhasználónév vagy e-mail cím létezik-e
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :usernameOrEmail OR email = :usernameOrEmail");
+    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :usernameOrEmail OR email = :usernameOrEmail");
     $stmt->execute(['usernameOrEmail' => $usernameOrEmail]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -24,17 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
 
-            // Emlékezz rám: süti beállítása
-            if ($rememberMe) {
-                setcookie('username', $usernameOrEmail, time() + (86400 * 7), "/"); // 7 napig él
-                setcookie('password', $password, time() + (86400 * 7), "/"); // 7 napig él (kevésbé biztonságos)
                 
                 header("Location: dashboard.php");
                 exit;
             } else {
                 $errors[] = "Hibás jelszó!";}
-        }   
-   }
+    }   
 }
 
 // Hibaüzenetek megjelenítése
@@ -43,9 +37,6 @@ if ($errors) {
         echo "<p style='color: red;'>$error</p>";
     }
 }
-
-$username = isset($_COOKIE['username']) ? $_COOKIE['username'] : '';
-$password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -84,14 +75,13 @@ $password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
     </div>
     <div id="remember">
       <label for="remember_me">  
-      <input type="checkbox" name="remember_me" class="remember" id="remember_me" value="checked" <?php if(isset($_COOKIE['username'])) echo 'checked'; ?>/> 
+      <input type="checkbox" name="remember_me" class="remember" id="remember_me" value="checked"/> 
         <p id="white-text2">Remember me</p>
       </label>
     </div>
         <button type="submit" id="gomb">Log in</button>
     <p id="white-text3">Don't have an account? <a href="index.php">Register here</a></p>
     </form>
-    <!--test jellegű php rész-->
     <?php
     if (isset($_SESSION['errors'])) {
         foreach ($_SESSION['errors'] as $error) {
