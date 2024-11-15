@@ -54,11 +54,11 @@ if ($errors) {
     <form action="login.php" method="post">
     <h2>Log into your account</h2>
     <div class="input-field">
-        <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($username); ?>" required>
+        <input type="text" name="username" id="username" value="" required>
         <label for="username">Username or E-mail:</label>
         </div>
     <div class="input-field">
-        <input type="password" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>" required>
+        <input type="password" name="password" id="password" value="" required>
         <label for="password">Password:</label>
         </div>
         <div>
