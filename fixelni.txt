@@ -5,3 +5,6 @@ ha ez megvan kiirathatjuk a hibákat a login oldalon is
 login oldalon fixelni a remember me-t mert csak akkor lehet bejelentkezni ha be van kattintva és nem is jegyzi meg
 sem a username-t sem a jelszót
 emellett implementálni a forgot password-öt
+
+megcsinálni a jelszó megjelenítését
+1234qwer_$
