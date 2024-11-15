@@ -21,7 +21,7 @@ session_start(); // Indítsd el a session-t
         <label for="username">Username:</label>
         </div>
       <div class="input-field">
-        <input type="email" name="Email_address" id="Email_address" required>
+        <input type="email" name="Email_address" id="email" required>
         <label for="Email_address">Email:</label>
         </div>
         <div class="input-field">

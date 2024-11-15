@@ -4,3 +4,5 @@ login oldalon fixelni a remember me-t mert csak akkor lehet bejelentkezni ha be 
 sem a username-t sem a jelszót (kitöröltem, most fogom majd újraimplementálni)
 emellett implementálni a forgot password-öt
 
+
+Tamado.Toszl0p

@@ -22,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
-
-                header("Location: dashboard.php");
-                exit;
+          
+            header("Location: dashboard.php");
+            exit;
             } else {
                 $errors[] = "Wrong or just simply incorrect password!";}
     }   
@@ -91,4 +91,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </body>
 </html>
-
