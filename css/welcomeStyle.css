@@ -11,6 +11,11 @@ h1, h2, h3 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* enyhe árnyék */
 }
 
+#mainresz{
+    margin-top: 5em;
+    font-size: larger;
+}
+
 p {
     margin: 10px 0;
 }
@@ -42,12 +47,15 @@ a:hover {
 }
 
 #thanks{
-    font-size: 18px;
+    font-size: 23px;
+    text-align: center;
 }
 
 #login{
-    font-size: larger;
+    font-size: 30px;
     color: cadetblue;
+    text-align: center;
+    margin-left: 25em;
 }
 
 #login:hover{

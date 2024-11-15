@@ -21,8 +21,8 @@ session_start(); // Indítsd el a session-t
         <label for="username">Username:</label>
         </div>
       <div class="input-field">
-        <input type="email" name="email" id="email" required>
-        <label for="email">Email:</label>
+        <input type="email" name="Email_address" id="Email_address" required>
+        <label for="Email_address">Email:</label>
         </div>
         <div class="input-field">
           <input type="password" name="password" id="password" required>
@@ -50,7 +50,7 @@ session_start(); // Indítsd el a session-t
       <label for="agree">  
       <input type="checkbox" name="agree" class="agree" id="box" value="checked" required/> 
         <p id="white-text">I agree with the            
-        <a href="./importált_masikbol/TOS.html" title="term of services">term of services</a></p>
+        <a href="./importált_masikbol/TOS.html" title="term of services" target="_blank">Terms Of Services</a></p>
         </label>
       </div>
 

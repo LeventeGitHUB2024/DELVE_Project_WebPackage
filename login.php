@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = db();
 
     // Ellenőrizd, hogy a felhasználónév vagy e-mail cím létezik-e
-    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :usernameOrEmail OR E_mail_address = :usernameOrEmail");
+    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :usernameOrEmail OR Email_address = :usernameOrEmail");
     $stmt->execute(['usernameOrEmail' => $usernameOrEmail]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 

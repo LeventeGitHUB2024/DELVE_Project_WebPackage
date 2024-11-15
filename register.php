@@ -5,7 +5,7 @@ $errors = [];
 // Ellenőrizzük, hogy POST kérés érkezett-e
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
-    $email = $_POST['E_mail_address'] ?? '';  // Módosított mezőnév
+    $email = $_POST['Email_address'] ?? '';  // Módosított mezőnév
     $password = $_POST['password'] ?? '';
     $password2 = $_POST['password2'] ?? '';
 
@@ -30,14 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "The password must contain  at least 1 lowercase letter";
     } elseif (!preg_match('/[0-9]/', $password)) {
         $errors[] = "The password must contain  at least 1 number";
-    } elseif (!preg_match('/[\W$_.-!@#$%^&*()]/', $password)) {
+    } elseif (!preg_match('/[^\w\s]/', $password)) {
         $errors[] = "The password must contain  at least 1 special character.";
     } 
     
     // Ellenőrzés, hogy a felhasználónév és az e-mail cím egyedi-e
     $pdo = db();
 
-    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :username OR E_mail_address = :email");     // Módosított mezőnév
+    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :username OR Email_address = :email");     // Módosított mezőnév
     $stmt->execute(['username' => $username, 'email' => $email]);
     
     if ($stmt->fetch()) {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Ha nincsenek hibák, folytatjuk a regisztrációval
-    $stmt = $pdo->prepare("INSERT INTO players_pyr (username, E_mail_address, password) VALUES (:username, :email, :password)");
+    $stmt = $pdo->prepare("INSERT INTO players_pyr (username, Email_address, password) VALUES (:username, :email, :password)");
     $stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashedPassword]);
     
     // Sikeres regisztráció után átirányítás
