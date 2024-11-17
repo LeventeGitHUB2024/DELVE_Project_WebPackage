@@ -10,9 +10,16 @@
 </head>
 <body>
     <img src="./img/delve_logo.png" alt="DELVE" class="logo">
+    <div id="mainresz">
     <h1>Succesful Registration</h1>
-    <p id="thanks">Thank you for the registration, now you can log in.</p>
+    <p id="thanks">Thank you for your registration</p>
+    <p id="thanks">Hopefully you did not forgot your details already...</p>
+    <br>
+    <p id="thanks">If you can still remember you username/email and your password...</p>
+    <div id="atiranyitas">
     <a href="login.php" id="login">Take me to the login page >>></a>
-    
+    </div>
+    </div>
+   
 </body>
 </html>

@@ -20,19 +20,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Jelszó validálása
-    if (strlen($password) < 8 || strlen($password) > 255) {
+    if ($password !== $password2) { 
+        $errors[] = "Both passwords need to be the same!";
+    }  elseif (strlen($password) < 8 || strlen($password) > 255) {
         $errors[] = "The length of the password must be between 8 and 255 characters.";
-    } elseif (!preg_match('/[A-Z]/', $password)) {
+    }  elseif (!preg_match('/[A-Z]/', $password)) {
         $errors[] = "The password must contain  at least 1 uppercase letter";
     } elseif (!preg_match('/[a-z]/', $password)) {
         $errors[] = "The password must contain  at least 1 lowercase letter";
     } elseif (!preg_match('/[0-9]/', $password)) {
         $errors[] = "The password must contain  at least 1 number";
-    } elseif (!preg_match('/[\W$_.-!@#$%^&*()]/', $password)) {
+    } elseif (!preg_match('/[^\w\s]/', $password)) {
         $errors[] = "The password must contain  at least 1 special character.";
-    } elseif ($password !== $password2) { 
-        $errors[] = "Both passwords need to be the same!";
-    }    
+    } 
     
     // Ellenőrzés, hogy a felhasználónév és az e-mail cím egyedi-e
     $pdo = db();
