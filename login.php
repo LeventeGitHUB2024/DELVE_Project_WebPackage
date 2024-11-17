@@ -7,7 +7,6 @@ $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usernameOrEmail = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
-    $rememberMe = isset($_POST['remember_me']); // Ellenőrizzük a checkbox állapotát
 
     // Kapcsolódás az adatbázishoz
     $pdo = db();
@@ -23,18 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
-
-            // Emlékezz rám: süti beállítása
-            if ($rememberMe) {
-                setcookie('username', $usernameOrEmail, time() + (86400 * 7), "/"); // 7 napig él
-                setcookie('password', $password, time() + (86400 * 7), "/"); // 7 napig él (kevésbé biztonságos)
                 
                 header("Location: dashboard.php");
                 exit;
             } else {
                 $errors[] = "Hibás jelszó!";}
         }   
-   }
 }
 
 // Hibaüzenetek megjelenítése
@@ -44,8 +37,6 @@ if ($errors) {
     }
 }
 
-$username = isset($_COOKIE['username']) ? $_COOKIE['username'] : '';
-$password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -62,11 +53,11 @@ $password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
     <form action="login.php" method="post">
     <h2>Log into your account</h2>
     <div class="input-field">
-        <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($username); ?>" required>
+        <input type="text" name="username" id="username" required>
         <label for="username">Username or E-mail:</label>
         </div>
     <div class="input-field">
-        <input type="password" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>" required>
+        <input type="password" name="password" id="password" required>
         <label for="password">Password:</label>
         </div>    
     <div id="cetli">
@@ -76,7 +67,7 @@ $password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
     </div>
     <div id="remember">
       <label for="remember_me">  
-      <input type="checkbox" name="remember_me" class="remember" id="remember_me" value="checked" <?php if(isset($_COOKIE['username'])) echo 'checked'; ?>/> 
+      <input type="checkbox" name="remember_me" class="remember" id="remember_me"/> 
         <p id="white-text2">Remember me</p>
       </label>
     </div>

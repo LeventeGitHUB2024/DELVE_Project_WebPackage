@@ -1,7 +1,7 @@
 <?php
 
 const DB_HOST = 'localhost';
-const DB_NAME = 'delve'; // Az adatbázis neve
+const DB_NAME = 'auth'; // Az adatbázis neve
 const DB_USER = 'root'; // Az adatbázis felhasználó
 const DB_PASSWORD = ''; // Az adatbázis jelszava
 
