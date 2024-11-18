@@ -12,9 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = db();
 
     // Ellenőrizd, hogy a felhasználónév vagy e-mail cím létezik-e
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :usernameOrEmail OR email = :usernameOrEmail");
+    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :usernameOrEmail OR email = :usernameOrEmail");
     $stmt->execute(['usernameOrEmail' => $usernameOrEmail]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    
 
     // Ha nincs találat
     if (!$user) {
@@ -27,8 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
             } else {
                 $errors[] = "Wrong or just simply incorrect password!";}
-    }   
+                //var_dump($user['password']);
+    }
 }
+//echo $_SESSION['user_id'];
+// Debugging: Ellenőrizd a session adatokat
+//var_dump($_SESSION); // Megmutatja a session tartalmát
+
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <?php
       // Hibaüzenetek megjelenítése
-    if ($errors) {
+    if (!empty($errors)) {
     foreach ($errors as $error) {
         echo "<div class='alert alert-error'>
     <div class='closebtn' onclick='removeAlert(this)';'>
