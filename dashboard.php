@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_email'])) {
 
 // Kiírhatod a felhasználó nevét vagy e-mail címét
 $pdo = db();
-$stmt = $pdo->prepare("SELECT * FROM users1 WHERE email = :email");
+$stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE email = :email");
 $stmt->execute(['email' => $_SESSION['user_email']]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
