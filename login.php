@@ -12,18 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = db();
 
     // Ellenőrizd, hogy a felhasználónév vagy e-mail cím létezik-e
-    $stmt = $pdo->prepare("SELECT * FROM users3_kevert WHERE username = :usernameOrEmail OR email = :usernameOrEmail");
+    $stmt = $pdo->prepare("SELECT * FROM users1 WHERE username = :usernameOrEmail OR email = :usernameOrEmail");
     $stmt->execute(['usernameOrEmail' => $usernameOrEmail]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    
 
     // Ha nincs találat
     if (!$user) {
         $errors[] = "You don't have an account, create one before logging in, it might just help! 😉";
     } else {
         if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_email'] = $user['email'];
           
             header("Location: dashboard.php");
             exit;

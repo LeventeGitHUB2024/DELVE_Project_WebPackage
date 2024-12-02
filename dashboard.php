@@ -3,15 +3,15 @@ session_start();
 require 'db.php';
 
 // Ellenőrizd, hogy a felhasználó be van-e jelentkezve
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_email'])) {
     header("Location: login.php");
     exit;
 }
 
 // Kiírhatod a felhasználó nevét vagy e-mail címét
 $pdo = db();
-$stmt = $pdo->prepare("SELECT * FROM users3_kevert WHERE id = :id");
-$stmt->execute(['id' => $_SESSION['user_id']]);
+$stmt = $pdo->prepare("SELECT * FROM users1 WHERE email = :email");
+$stmt->execute(['email' => $_SESSION['user_email']]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 

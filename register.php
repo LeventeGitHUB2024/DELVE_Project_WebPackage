@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ellenőrzés, hogy a felhasználónév és az e-mail cím egyedi-e
     $pdo = db();
 
-    $stmt = $pdo->prepare("SELECT * FROM users3_kevert WHERE username = :username OR email = :email");     // Módosított mezőnév
+    $stmt = $pdo->prepare("SELECT * FROM users1 WHERE username = :username OR email = :email");     // Módosított mezőnév
     $stmt->execute(['username' => $username, 'email' => $email]);
     
     if ($stmt->fetch()) {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Ha nincsenek hibák, folytatjuk a regisztrációval
-    $stmt = $pdo->prepare("INSERT INTO users3_kevert (username, email, password) VALUES (:username, :email, :password)");
+    $stmt = $pdo->prepare("INSERT INTO users1 (username, email, password) VALUES (:username, :email, :password)");
     $stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashedPassword]);
     
     // Sikeres regisztráció után átirányítás
