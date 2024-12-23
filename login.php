@@ -1,39 +1,24 @@
 <?php
 session_start();
 require 'db.php';
-$errors = [];
 
-// Ellenőrizzük, hogy POST kérés érkezett-e
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $usernameOrEmail = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
+// Alapértelmezett mezőértékek
+$prefilledUsername = '';
 
-    // Kapcsolódás az adatbázishoz
+// Ha a "remember_me" cookie érvényes, töltsük ki az adatokat
+if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
     $pdo = db();
-
-    // Ellenőrizd, hogy a felhasználónév vagy e-mail cím létezik-e
-    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :usernameOrEmail OR email = :usernameOrEmail");
-    $stmt->execute(['usernameOrEmail' => $usernameOrEmail]);
+    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :username AND remember_token = :token");
+    $stmt->execute([
+        'username' => $_COOKIE['remember_user'],
+        'token' => $_COOKIE['remember_me']
+    ]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Ha nincs találat
-    if (!$user) {
-        $errors[] = "You don't have an account, create one before logging in, it might just help! 😉";
-    } else {
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['user_email'] = $user['email'];
-          
-            header("Location: dashboard.php");
-            exit;
-            } else {
-                $errors[] = "Wrong or just simply incorrect password!";}
-                //var_dump($user['password']);
+    if ($user) {
+        $prefilledUsername = htmlspecialchars($user['username']);
     }
 }
-//echo $_SESSION['user_id'];
-// Debugging: Ellenőrizd a session adatokat
-//var_dump($_SESSION); // Megmutatja a session tartalmát
-
 ?>
 
 <!DOCTYPE html>
@@ -48,10 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
   <div class="wrapper">
-    <form action="login.php" method="post">
+    <form action="logging_in.php" method="post">
     <h2>Log into your account</h2>
     <div class="input-field">
-        <input type="text" name="username" id="username" value="" required>
+        <input type="text" name="username" id="username" value="<?= $prefilledUsername ?>" required>
         <label for="username">Username or E-mail:</label>
         </div>
     <div class="input-field">
@@ -72,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <div id="remember">
       <label for="remember_me">  
-      <input type="checkbox" name="remember_me" class="remember" id="remember_me" value="checked"/> 
+      <input type="checkbox" name="remember_me" class="remember" id="remember_me"/> 
         <p id="white-text2">Remember me</p>
       </label>
     </div>
@@ -82,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <?php
       // Hibaüzenetek megjelenítése
-    if (!empty($errors)) {
-    foreach ($errors as $error) {
+    if (!empty($_SESSION['errors'])) {
+    foreach ($_SESSION['errors'] as $error) {
         echo "<div class='alert alert-error'>
     <div class='closebtn' onclick='removeAlert(this)';'>
     &times;</div>$error</div>";

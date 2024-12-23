@@ -1,7 +1,22 @@
 <?php
 session_start();
-session_destroy(); // Lejáratjuk a munkamenetet
+require 'db.php';
 
-header("Location: login.php"); // Visszairányítjuk a bejelentkezési oldalra
+// Ha a felhasználó be van jelentkezve, töröljük a tokent az adatbázisból
+if (isset($_SESSION['user_email'])) {
+    $pdo = db();
+    $stmt = $pdo->prepare("UPDATE players_pyr SET remember_token = NULL WHERE email = :email");
+    $stmt->execute(['email' => $_SESSION['user_email']]);
+}
+
+// Töröljük a cookie-kat
+setcookie('remember_me', '', time() - 3600, '/');
+setcookie('remember_user', '', time() - 3600, '/');
+
+// Session törlése
+session_destroy();
+
+// Átirányítás a bejelentkezési oldalra
+header("Location: login.php");
 exit;
 ?>
