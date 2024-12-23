@@ -41,8 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $errors[] = "Wrong or just simply incorrect password!";}
                 //var_dump($user['password']);
+            }
     }
-
+    
     // Ha vannak hibák, tároljuk őket a session-ben, majd irányítsuk át
     if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
