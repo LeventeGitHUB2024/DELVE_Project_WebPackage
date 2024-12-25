@@ -26,7 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = "To reset your password, click on the following link: " . $resetLink;
         mail($email, $subject, $message);
 
-        echo "An email with password reset instructions has been sent.";
+        echo "<div style='color: green; position:fixed; border: 1px solid green; border-radius: 5px; margin-top: -20em; font-weight: bold; background-color: #fff; width:35%; text-align:center'>
+            An email with password reset instructions has been sent.
+          </div>";
     } else {
         $errors[] = "No account found with that email.";
     }
@@ -55,12 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>  
 </div>
 
-    
-</form>
-
-</body>
-</html>
-
 <?php
       // Hibaüzenetek megjelenítése
     if (!empty($_SESSION['errors'])) {
@@ -73,3 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      unset($_SESSION['errors']);
   }
 ?>
+    
+</form>
+</body>
+</html>
