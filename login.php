@@ -16,7 +16,7 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
-        $prefilledUsername = htmlspecialchars($user['username']);
+        $prefilledUsername = htmlspecialchars($user['username']); 
     }
 }
 ?>
@@ -36,7 +36,7 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
     <form action="logging_in.php" method="post">
     <h2>Log into your account</h2>
     <div class="input-field">
-        <input type="text" name="username" id="username" value="<?= $prefilledUsername ?>" required>
+        <input type="text" name="username" id="username" value="<?php echo $prefilledUsername; ?>" required>
         <label for="username">Username or E-mail:</label>
         </div>
     <div class="input-field">
@@ -52,7 +52,7 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
         </div>    
     <div id="cetli">
       <label for="forgot">             
-        <a href="#" title="forgotten_password">Forgot your password?</a>
+        <a href="forgotten_password.php" title="forgotten_password">Forgot your password?</a>
       </label>
     </div>
     <div id="remember">

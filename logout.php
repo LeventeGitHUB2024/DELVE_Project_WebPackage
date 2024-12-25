@@ -2,6 +2,8 @@
 session_start();
 require 'db.php';
 
+$rememberMeSet = isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user']);
+
 // Ha a felhasználó be van jelentkezve, töröljük a tokent az adatbázisból
 if (isset($_SESSION['user_email'])) {
     $pdo = db();
@@ -9,9 +11,11 @@ if (isset($_SESSION['user_email'])) {
     $stmt->execute(['email' => $_SESSION['user_email']]);
 }
 
-// Töröljük a cookie-kat
-setcookie('remember_me', '', time() - 3600, '/');
-setcookie('remember_user', '', time() - 3600, '/');
+// Csak akkor töröljük a cookie-kat, ha nincs "Remember Me" funkcióhoz kötve
+if (!$rememberMeSet) {
+    setcookie('remember_me', '', time() - 3600, '/', '', false, true);
+    setcookie('remember_user', '', time() - 3600, '/', '', false, true);
+}
 
 // Session törlése
 session_destroy();
