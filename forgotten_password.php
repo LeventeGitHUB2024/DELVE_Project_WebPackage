@@ -42,10 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE Forgotten Password</title>
     <link rel="stylesheet" href="./css/forgotten.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script async src="./importált_masikbol/script_registration.js"></script>
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
 </head>
 <body>
-
 
 <div>
 <h2>The first step to reset your password</h2>
@@ -55,21 +56,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="email">Enter your email</label>
         <button type="submit">Submit</button>
     </div>  
-</div>
+    </form>
+
 
 <?php
       // Hibaüzenetek megjelenítése
-    if (!empty($_SESSION['errors'])) {
-    foreach ($_SESSION['errors'] as $error) {
-        echo "<div class='alert alert-error'>
-    <div class='closebtn' onclick='removeAlert(this)';'>
-    &times;</div>$error</div>";
-    }
-     // Üresítsd ki a hibákat, hogy ne jelenjenek meg újra
-     unset($_SESSION['errors']);
-  }
+      if (!empty($errors)) {
+        foreach ($errors as $error) {
+            echo "<div class='alert alert-error'><div class='closebtn' onclick='removeAlert(this)';'>
+            &times;</div>$error</div>";}
+        }
 ?>
     
-</form>
+</div>
 </body>
 </html>
