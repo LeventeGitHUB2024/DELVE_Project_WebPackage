@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         } else {
             // Helytelen jelszó
-            $errors[] = "Wrong or just simply incorrect password!";
+            $errors[] = "Wrong, or just simply incorrect password! \n Are you sure you didn't mistyped it?";
         }
     }
 

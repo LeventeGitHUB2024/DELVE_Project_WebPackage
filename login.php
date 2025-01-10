@@ -27,7 +27,7 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE Login</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style_login.css">
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
     <script async src="./importált_masikbol/script_login.js"></script>
 </head>

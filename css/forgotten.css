@@ -8,7 +8,7 @@ form {
     position: relative;
     width: 50%;
     height: 2.5em;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .input-field label {
@@ -20,6 +20,7 @@ form {
     font-size: 16px;
     pointer-events: none;
     transition: 0.15s ease;
+    font-size: 16px;
   }
   
   .input-field input {
@@ -33,7 +34,7 @@ form {
   }
 
   button {
-    margin-top: 0.5em; /* Eltolás az input mezőtől */
+    margin-top: 0.4em; /* Eltolás az input mezőtől */
     background: #fff;
     color: #000;
     font-weight: 600;
@@ -103,7 +104,7 @@ form {
 
   h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 0.4em;
     color: #fff;
   }
   
