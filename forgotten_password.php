@@ -42,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE Forgotten Password</title>
     <link rel="stylesheet" href="./css/forgotten.css">
-    <script async src="./importált_masikbol/script_registration.js"></script>
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
 </head>
 <body>
