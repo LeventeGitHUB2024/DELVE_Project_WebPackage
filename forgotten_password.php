@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>DELVE Forgotten Password</title>
     <link rel="stylesheet" href="./css/forgotten.css">
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
+    <script async src="./importált_masikbol/alertRemover.js"></script>
 </head>
 <body>
 
