@@ -26,8 +26,7 @@ if (isset($_GET['token'])) {
                 $stmt = $pdo->prepare("UPDATE players_pyr SET password = :password, reset_token = NULL WHERE reset_token = :token");
                 $stmt->execute(['password' => $hashedPassword, 'token' => $token]);
 
-                echo "<div style='color: green; position:fixed; border: 1px solid green; border-radius: 5px; margin-top: -20em; font-weight: bold; background-color: #fff; width:35%; text-align:center'>Your password has been successfully reset.
-                </div>";
+                
             } else {
                 $errors[] = "Passwords do not match.";
             }
@@ -46,8 +45,7 @@ if (isset($_GET['token'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE Password Reset</title>
-    <link rel="stylesheet" href="./css/forgotten.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/password_reset   .css">
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
     <script async src="./importált_masikbol/script_registration.js"></script>
 </head>
