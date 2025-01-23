@@ -25,8 +25,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script async src="./UCP_hez_template_files/js/main.js"></script>
+    <script async src="./js/UCPmain.js"></script>
 </head>
 <body>
 <img src="./img/delve_logo.png" alt="Delve_logo" id="kep">

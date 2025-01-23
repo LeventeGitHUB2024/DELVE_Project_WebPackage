@@ -1,0 +1,3 @@
+alap backround color #003366
+hover: #0857a7
+3. kék árnyalat: #2979c9

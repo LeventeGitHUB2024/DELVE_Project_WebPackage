@@ -48,7 +48,7 @@ if (isset($_GET['token'])) {
     <title>DELVE Password Reset</title>
     <link rel="stylesheet" href="./css/password_reset.css">
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
-    <script async src="./importált_masikbol/script_registration.js"></script>
+    <script async src="./js/script_registration.js"></script>
 </head>
 <body>
 

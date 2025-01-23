@@ -7,8 +7,23 @@ $rememberMeSet = isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user
 // Ha a felhasználó be van jelentkezve, töröljük a tokent az adatbázisból
 if (isset($_SESSION['user_email'])) {
     $pdo = db();
-    // $stmt = $pdo->prepare("UPDATE players_pyr SET remember_token = NULL WHERE email = :email");
-    //$stmt->execute(['email' => $_SESSION['user_email']]); ezen még finomítani kell.  
+
+    // Ha a "remember me" aktív volt, akkor megtartjuk a felhasználó nevét
+    if (isset($_COOKIE['remember_me']) && $_COOKIE['remember_me'] == '1') {
+        // Az email és a felhasználónevet itt kezelheted
+        $_SESSION['user_email'] = $_SESSION['user_email'];
+
+    } else {
+        // Ha nincs "remember me", töröljük a felhasználó nevet a session-ből
+        unset($_SESSION['user_email']);
+        
+        // Ezt kiírjuk a felhasználónév mezőben
+        $username = ''; // Üres string, ha nem emlékezünk rá
+
+        // Ha a token is felesleges, töröljük az adatbázisból
+        $stmt = $pdo->prepare("UPDATE players_pyr SET remember_token = NULL WHERE email = :email");
+        $stmt->execute(['email' => $_SESSION['user_email']]); //még mindig nem tökéletes
+    }
 }
 
 // Csak akkor töröljük a cookie-kat, ha nincs "Remember Me" funkcióhoz kötve

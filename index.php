@@ -9,7 +9,7 @@ session_start(); // Indítsd el a session-t
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
     <title>DELVE Registration</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script async src="./importált_masikbol/script_registration.js"></script>
+    <script async src="./js/script_registration.js"></script>
     <link rel="shortcut icon" href="../favico2.png" type="image/png">
 </head>
 <body>
@@ -50,7 +50,7 @@ session_start(); // Indítsd el a session-t
       <label for="agree">  
       <input type="checkbox" name="agree" class="agree" id="box" value="checked" required/> 
         <p id="white-text">I agree with the            
-        <a href="./importált_masikbol/TOS.html" title="term of services" target="_blank">Terms Of Services</a></p>
+        <a href="TOS.html" title="term of services" target="_blank">Terms Of Services</a></p>
         </label>
       </div>
 

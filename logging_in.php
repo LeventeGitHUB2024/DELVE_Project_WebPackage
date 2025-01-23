@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             // Átirányítás a dashboardra
-            header("Location: dashboard.php");
+            header("Location: UCP.php");
             exit;
         } else {
             // Helytelen jelszó
