@@ -141,7 +141,6 @@ button {
   
 #hatter{
     background-image: url('../img/Delve_bg.png');
-    
 }
 
 #kep{
@@ -155,7 +154,7 @@ button {
 
 /********** Template CSS **********/
 :root {
-    --primary: #EB1616;
+    --primary: #0857a7;
     --secondary: #191C24;
     --light: #6C7293;
     --dark: #000000;
@@ -168,22 +167,6 @@ button {
     bottom: 45px;
     z-index: 99;
 }
-
-
-/*** Spinner ***/
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-}
-
 
 /*** Button ***/
 .btn {
@@ -215,7 +198,6 @@ button {
     font-weight: normal;
     border-radius: 50px;
 }
-
 
 /*** Layout ***/
 .sidebar {
@@ -271,7 +253,6 @@ button {
         margin-left: 0;
     }
 }
-
 
 /*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
@@ -383,7 +364,6 @@ button {
     }
 }
 
-
 /*** Date Picker ***/
 .bootstrap-datetimepicker-widget.bottom {
     top: auto !important;
@@ -411,13 +391,11 @@ button {
     border-bottom-color: var(--primary);
 }
 
-
 /*** Testimonial ***/
 .progress .progress-bar {
     width: 0px;
     transition: 2s;
 }
-
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-dots {

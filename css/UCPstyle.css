@@ -287,3 +287,155 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+/***  mésik styles.css  ***/
+
+body {
+    line-height: 1.6; /* olvashatóság növelése */
+}
+
+h1, h2, h3 {
+    color: #003366; /* sötétkék szín */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* enyhe árnyék */
+}
+
+h3{
+    font-size: 1.5em;
+    margin-left: 20px;
+}
+
+#mainresz{
+    margin-top: 5em;
+    font-size: larger;
+}
+
+p {
+    margin: 10px 0;
+}
+
+a {
+    color: #003366; /* hivatkozások színe */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none; /* hivatkozások aláhúzása, ha föléjük viszik az egeret */
+}
+
+.ink {
+    color: #003366; /* tinta színe */
+    font-style: italic; /* dőlt betűs stílus */
+}
+
+.logo{
+    display: block;
+    margin: auto;
+}
+
+#thanks{
+    font-size: 23px;
+    text-align: center;
+}
+
+#atiranyitas{
+    text-align: center;
+}
+
+#login{
+    font-size: 30px;
+    color: cadetblue;
+}
+
+#login:hover{
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#wlc{
+    font-size: 70px;
+    text-align: right;
+    font-weight: 600;
+    margin: 1px;
+}
+
+#info{
+    font-size: 30px;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 26px;
+}
+
+/* From Uiverse.io by cssbuttons-io */ 
+button {
+    font-size: 17px;
+    padding: 1em 2.7em;
+    font-weight: 500;
+    background: #1f2937;
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+    cursor: pointer;
+    margin-top: 1em;
+    float: right;
+    position: sticky;
+  }
+  
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0.6em;
+    margin-top: -0.25em;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.3)
+    );
+  }
+  
+  .label {
+    position: relative;
+    top: -1px;
+  }
+  
+  .transition {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 500ms;
+    background-color: rgba(185, 16, 16, 0.6);
+    border-radius: 9999px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  button:hover .transition {
+    width: 14em;
+    height: 14em;
+  }
+  
+  button:active {
+    transform: scale(0.97);
+  }
+
+#delvelogo{
+    display: block;
+    float: left;
+    width: 180px;
+    height: 45px;
+    margin-right: 9px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#sitetitle{
+    text-align: center;
+    margin: auto;
+}
