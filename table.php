@@ -71,13 +71,13 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="UCP.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="UCP.php" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <!--<div class="nav-item dropdown">
                         <a href="#" class="nav-link" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                     </div>-->
                     <!--<a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>-->
                     <!--<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
-                    <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Saves</a>
+                    <a href="table.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Saves</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Statistics</a>
                     <div class="nav-item dropdown">
                         <!--<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
@@ -98,7 +98,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="content">
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-            <a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
+            <a href="UCP.php" class="navbar-brand d-flex d-lg-none me-4">
                 <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
             </a>
             <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -186,76 +186,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         <!-- Navbar End -->
 
 
-        <!-- később felhasználandó
-            
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            eddig -->
-
-
-        <!--- User Informations -->
+        <!--- General Save Informations -->
         <div class="container-fluid pt-4 px-4">
             <div class="row g-4">
                 <div class="col-sm-12 col-xl-12">
@@ -264,31 +195,26 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <table class="table table-hover">
                             <thead>
                                 <tr>                                    
-                                    <th scope="col" class="fs-5 fw-bold">General Account Informations</th>
+                                    <th scope="col" class="fs-5 fw-bold">General Save Informations:</th>
                                     <th></th>
                                     <th></th>                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>                                    
-                                    <th class="fw-bold">E-mail Adress:</th>
-                                    <td></td>
-                                    <td><?php echo htmlspecialchars($user['email']); ?></td>
-                                </tr>
-                                <tr>                                    
-                                    <th class="fw-bold">Member here since:</th>
-                                    <td>*(According to first save)</td>
-                                    <td><?php echo htmlspecialchars($user['Full_start_date']); ?></td>
-                                </tr>
-                                <tr>
-                                <th class="fw-bold">Longest Playtime:</th>
+                                <th class="fw-bold">Longest playtime:</th>
                                     <td></td>
                                     <td><?php echo htmlspecialchars($user['playtime']); ?></td>
                                 </tr>
-                                <th class="fw-bold">Deactivated:</th>
-                                    <td>*(0 means no, 1 means yes)</td>
-                                    <td><?php echo htmlspecialchars($user['deactivated']); ?></td>
+                                <th class="fw-bold">Game's won:</th>
+                                    <td></td>
+                                    <td><?php echo htmlspecialchars($user['games_won']); ?></td>
                                 </tr>
+                                <th class="fw-bold">Game's lost:</th>
+                                    <td></td>
+                                    <td><?php echo htmlspecialchars($user['games_lost']); ?></td>
+                                </tr>
+                                <tr>
                             </tbody>
                         </table>
                     </div>
@@ -296,90 +222,48 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
 
-        <!--  User Informations End -->
+        <!--  General Save Informations End -->
 
 
-        <!-- Widgets Start -->
+        <!--- Specific Save Informations -->
         <div class="container-fluid pt-4 px-4">
             <div class="row g-4">
-                <div class="col-sm-12 col-md-6 col-xl-4">
-                    <div class="h-100 bg-secondary rounded p-4">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <h6 class="mb-0">Messages</h6>
-                            <a href="">Show All</a>
-                        </div>
-                        <div class="d-flex align-items-center pt-3">
-                            <img class="rounded-circle flex-shrink-0" src="img/favico2.png" alt="" style="width: 47px; height: 45px;">
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-0">DELVE WebTeam</h6>
-                                    <small>1 minutes ago</small>
-                                </div>
-                                <span>Welcome back, <?php echo htmlspecialchars($user['username']); ?>! </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-xl-4">
-                    <div class="h-100 bg-secondary rounded p-4">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h6 class="mb-0">Calender</h6>
-                            <a href="">Show All</a>
-                        </div>
-                        <div id="calender"></div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-xl-4">
-                    <div class="h-100 bg-secondary rounded p-4">
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h6 class="mb-0">To Do List</h6>
-                            <a href="">Show All</a>
-                        </div>
-                        <div class="d-flex mb-2">
-                            <input class="form-control bg-dark border-0" type="text" placeholder="Enter task">
-                            <button type="button" class="btn btn-primary ms-2">Add</button>
-                        </div>
-                        <div class="d-flex align-items-center border-bottom py-2">
-                            <input class="form-check-input m-0" type="checkbox">
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <span>Short task goes here...</span>
-                                    <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center border-bottom py-2">
-                            <input class="form-check-input m-0" type="checkbox">
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <span>Short task goes here...</span>
-                                    <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center border-bottom py-2">
-                            <input class="form-check-input m-0" type="checkbox" checked>
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <span><del>Short task goes here...</del></span>
-                                    <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center border-bottom py-2">
-                            <input class="form-check-input m-0" type="checkbox">
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <span>Short task goes here...</span>
-                                    <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-sm-12 col-xl-12">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="mb-4"></h6>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>                                    
+                                    <th scope="col" class="fs-5 fw-bold">Specific Save Informations:</th>
+                                    <th></th>
+                                    <th></th>                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>                                    
+                                <th class="fw-bold">First save's date:</th>
+                                    <td></td>
+                                    <td><?php echo htmlspecialchars($user['Full_start_date']); ?></td>
+                                </tr>
+                                <th class="fw-bold">Save's name:</th>
+                                    <td></td>
+                                    <td><?php echo htmlspecialchars($user['save_name']); ?></td>
+                                </tr>
+                                <th class="fw-bold">Last time saved:</th>
+                                    <td></td>
+                                    <td><?php echo htmlspecialchars($user['save_time']); ?></td>
+                                </tr>
+                                <!--befejezni, öteltek az ötletek.txt-ben, ha van másik mentés akkor azt is kiírni...-->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Widgets End -->
+
+        <!-- Specific Save Informations End -->
+
+        
 
 
         <!-- Footer Start -->
