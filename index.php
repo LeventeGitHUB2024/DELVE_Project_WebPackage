@@ -10,7 +10,7 @@ session_start(); // Indítsd el a session-t
     <title>DELVE Registration</title>
     <link rel="stylesheet" href="./css/style.css">
     <script async src="./js/script_registration.js"></script>
-    <link rel="shortcut icon" href="../favico2.png" type="image/png">
+    <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
 </head>
 <body>
   <div class="wrapper">

@@ -47,7 +47,7 @@ if (isset($_GET['token'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE Password Reset</title>
     <link rel="stylesheet" href="./css/password_reset.css">
-    <link rel="shortcut icon" href="../favico2.png" type="image/png">
+    <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
     <script async src="./js/script_registration.js"></script>
 </head>
 <body>

@@ -31,7 +31,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../favico2.png" type="image/png">
+    <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

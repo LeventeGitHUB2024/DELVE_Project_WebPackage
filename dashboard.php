@@ -22,7 +22,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE User Dashboard</title>
     <link rel="stylesheet" href="./css/welcomeStyle.css">
-    <link rel="shortcut icon" href="../favico2.png" type="image/png">
+    <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <script async src="./js/UCPmain.js"></script>

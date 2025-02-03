@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Succesful Registration</title>
     <link rel="stylesheet" href="./css/welcomeStyle.css">
-    <link rel="shortcut icon" href="../favico2.png" type="image/png">
+    <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
 
 </head>
 <body>
