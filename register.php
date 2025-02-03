@@ -14,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "The username can only consist of alphanumeric characters and underscores with the minimum length of at least 6 characters and a maximum of 20 characters!";
     }
 
-    // Email validálása
+    /*// Email validálása
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Please enter a valid e-mail adress!";
-    }
+    }*/
 
     // Jelszó validálása
     if ($password !== $password2) { 

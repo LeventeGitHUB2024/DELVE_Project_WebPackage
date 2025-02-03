@@ -1,9 +1,9 @@
 <?php
 
-const DB_HOST = 'https://mysqladmin-pub.nethely.hu/';
-const DB_NAME = 'delvemain'; // Az adatbázis neve
-const DB_USER = 'delvemain'; // Az adatbázis felhasználó
-const DB_PASSWORD = 'swaws123//'; // Az adatbázis jelszava
+const DB_HOST = 'mysql.nethely.hu:3306';           // Távoli hozzáférés
+const DB_NAME = 'delvemain';                       // Az adatbázis neve
+const DB_USER = 'delvemain';                       // Az adatbázis felhasználója
+const DB_PASSWORD = 'swaws123//';                  // Az adatbázis jelszava
 
 function db(): PDO
 {
