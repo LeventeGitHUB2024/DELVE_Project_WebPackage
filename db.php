@@ -1,9 +1,9 @@
 <?php
 
-const DB_HOST = 'localhost';
-const DB_NAME = 'delve'; // Az adatbázis neve
-const DB_USER = 'root'; // Az adatbázis felhasználó
-const DB_PASSWORD = ''; // Az adatbázis jelszava
+const DB_HOST = 'https://mysqladmin-pub.nethely.hu/';
+const DB_NAME = 'delvemain'; // Az adatbázis neve
+const DB_USER = 'delvemain'; // Az adatbázis felhasználó
+const DB_PASSWORD = 'swaws123//'; // Az adatbázis jelszava
 
 function db(): PDO
 {

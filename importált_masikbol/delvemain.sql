@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Dec 23. 15:40
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Gép: dbp.omega:3306
+-- Létrehozás ideje: 2025. Feb 03. 08:28
+-- Kiszolgáló verziója: 10.11.6-MariaDB-0+deb12u1
+-- PHP verzió: 7.2.34-54+0~20241224.101+debian12~1.gbpb6068e
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `delve`
+-- Adatbázis: `delvemain`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `challenges_cle` (
   `name` varchar(255) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `global_percentage` float NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- A tábla adatainak kiíratása `challenges_cle`
@@ -60,7 +60,7 @@ CREATE TABLE `completion_cpn` (
   `PYR_id` varchar(255) NOT NULL,
   `CLE_id` int(11) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `completion_cpn` (
 CREATE TABLE `conditions_cdn` (
   `Id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- A tábla adatainak kiíratása `conditions_cdn`
@@ -98,7 +98,7 @@ CREATE TABLE `groups_grp` (
   `ROM_id` varchar(255) NOT NULL,
   `UNT_id` int(11) NOT NULL,
   `number` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- --------------------------------------------------------
 
@@ -114,17 +114,17 @@ CREATE TABLE `players_pyr` (
   `games_won` int(9) NOT NULL DEFAULT 0,
   `games_lost` int(9) NOT NULL DEFAULT 0,
   `deactivated` tinyint(1) NOT NULL DEFAULT 0,
-  `remember_token` varchar(255) DEFAULT NULL
+  `remember_token` varchar(255) DEFAULT NULL,
   `reset_token` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- A tábla adatainak kiíratása `players_pyr`
 --
 
-INSERT INTO `players_pyr` (`email`, `username`, `password`, `playtime`, `games_won`, `games_lost`, `deactivated`, `remember_token`) VALUES
-('emil.emil@emil.emil', 'em1l.em1l', '$2y$10$Ynyd7lB6b.QIJxkBAMC9eepF/x6kDDZpCMpEEY1izmcHE4ykYYFsy', '01:01:01', 1, 2, 1, NULL),
-('lime.lime@lime.lime', 'l1me.l1me', '$2y$10$KvadS/MQrqmGUH1H1yXn.Os6.UF3fKrzqfSmrcfx8gpToZOLxF/Tm', '02:02:02', 2, 1, 0, NULL);
+INSERT INTO `players_pyr` (`email`, `username`, `password`, `playtime`, `games_won`, `games_lost`, `deactivated`, `remember_token`, `reset_token`) VALUES
+('emil.emil@emil.emil', 'em1l.em1l', '$2y$10$Ynyd7lB6b.QIJxkBAMC9eepF/x6kDDZpCMpEEY1izmcHE4ykYYFsy', '01:01:01', 1, 2, 1, NULL, NULL),
+('lime.lime@lime.lime', 'l1me.l1me', '$2y$10$KvadS/MQrqmGUH1H1yXn.Os6.UF3fKrzqfSmrcfx8gpToZOLxF/Tm', '02:02:02', 2, 1, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,7 +144,7 @@ CREATE TABLE `rooms_rom` (
   `wall_right` varchar(50) DEFAULT NULL,
   `wall_bottom` varchar(50) DEFAULT NULL,
   `wall_left` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- A tábla adatainak kiíratása `rooms_rom`
@@ -577,7 +577,7 @@ CREATE TABLE `saves_sae` (
   `WOLF_RUNE` tinyint(1) DEFAULT NULL,
   `RUNE_OF_WAR` tinyint(1) DEFAULT NULL,
   `SHUNNED_RUNE` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- A tábla adatainak kiíratása `saves_sae`
@@ -600,7 +600,7 @@ CREATE TABLE `statuses_sus` (
   `PYR_SAE_ROM_id` varchar(255) NOT NULL,
   `ROM_id` varchar(255) NOT NULL,
   `CDN_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- --------------------------------------------------------
 
@@ -611,7 +611,7 @@ CREATE TABLE `statuses_sus` (
 CREATE TABLE `units_unt` (
   `Id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- A tábla adatainak kiíratása `units_unt`
