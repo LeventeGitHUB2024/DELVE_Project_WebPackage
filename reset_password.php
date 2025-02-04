@@ -16,22 +16,7 @@ if (isset($_GET['token'])) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $password = $_POST['password'] ?? '';
             $password2 = $_POST['password2'] ?? '';
-    
-            // Ellenőrizd, hogy a két jelszó megegyezik
-            if ($password === $password2) {
-                //$errors[] = "Both passwords need to be the same!";
-                // Hasheljük a jelszót
-                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-    
-                // Frissítsük a jelszót az adatbázisban
-                $stmt = $pdo->prepare("UPDATE players_pyr SET password = :password, reset_token = NULL WHERE reset_token = :token");
-                $stmt->execute(['password' => $hashedPassword, 'token' => $token]);
-    
-                echo "<div style='color: green; position:fixed; border: 1px solid green; border-radius: 5px; margin-top: -20em; font-weight: bold; background-color: #fff; width:35%; text-align:center'>Your password has been successfully reset.</div>";
-            } else {
-                $errors[] = "Passwords do not match.";
-            }
-    
+            
             // Jelszó érvényesítés
             if (strlen($password) < 8 || strlen($password) > 255) {
                 $errors[] = "The length of the password must be between 8 and 255 characters.";
@@ -43,6 +28,20 @@ if (isset($_GET['token'])) {
                 $errors[] = "The password must contain at least 1 number.";
             } elseif (!preg_match('/[^\w\s]/', $password)) {
                 $errors[] = "The password must contain at least 1 special character.";
+            } 
+            // Ellenőrizd, hogy a két jelszó megegyezik
+            elseif ($password === $password2) {
+                //$errors[] = "Both passwords need to be the same!";
+                // Hasheljük a jelszót
+                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+    
+                // Frissítsük a jelszót az adatbázisban
+                $stmt = $pdo->prepare("UPDATE players_pyr SET password = :password, reset_token = NULL WHERE reset_token = :token");
+                $stmt->execute(['password' => $hashedPassword, 'token' => $token]);
+    
+                echo "<div style='color: green; position:fixed; border: 1px solid green; border-radius: 5px; margin-top: -25em; font-weight: bold; background-color: #fff; width:35%; text-align:center'><div class='closebtn' onclick='removeAlert(this)';'>&times;</div>Your password has been successfully reset.</div>";
+            } else {
+                $errors[] = "Passwords do not match.";
             }
         }
     } else {
@@ -62,7 +61,9 @@ if (isset($_GET['token'])) {
     <script async src="./js/script_registration.js"></script>
 </head>
 <body>
-
+<div id="logo">
+    <img src="./img/delve_logo.png" alt="DELVE_logo" >
+</div>
 <div>
 <h2 style="text-align: center">Enter your new password</h2>
 <form method="post" action="reset_password.php?token=<?php echo $_GET['token']; ?>">
