@@ -1,2 +1,3 @@
 
-külön lesz egy speciális rész, mi a mentés neve, mikor mentett utoljára, milyen fázisban van, mennyi resource és trade goods-ja van emellett a game length is odakerül
+külön lesz egy speciális rész, mi a mentés neve, mikor mentett utoljára, milyen fázisban van, 
+mennyi resource és trade goods-ja van emellett a game length is odakerül
