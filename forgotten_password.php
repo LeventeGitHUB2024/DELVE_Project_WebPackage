@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script async src="./js/alertRemover.js"></script>
 </head>
 <body>
+    <a class="link" href="http://temesiszabolcsistvan.hu/login.php">Back to login page</a>
 
 <div>
 <h2>The first step to reset your password</h2>
