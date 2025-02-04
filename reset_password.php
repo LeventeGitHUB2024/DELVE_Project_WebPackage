@@ -57,9 +57,9 @@ if (isset($_GET['token'])) {
 <form method="post" action="reset_password.php?token=<?php echo $_GET['token']; ?>">
 
     <div class="input-field">
-    <input type="password" name="password" required>
-    <label for="password">New password</label>
-    </div>
+        <input type="password" name="password" id="password" required>
+        <label for="password">New Password:</label>
+        </div>
     <div>
     <label class="container" >
         <input type="checkbox" checked id="password1check">
@@ -68,9 +68,9 @@ if (isset($_GET['token'])) {
       </label>  
     </div>
     <div class="input-field">
-    <input type="password" name="confirm_password" required>
-    <label for="confirm_password">Enter password again</label>
-    </div>
+        <input type="password" name="password2" id="password2" required>
+        <label for="password2">Password Again:</label>
+      </div>
     <div>
         <label class="container">
         <input type="checkbox" checked id="password2check"> 

@@ -21,10 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute(['token' => $token, 'email' => $email]);
 
         // Küldj emailt a felhasználónak a linkkel
-        $resetLink = "http://localhost/DELVE_Project_WebPackage/reset_password?token=" . $token;
+        $resetLink = "http://temesiszabolcsistvan.hu/reset_password.php?token=" . $token;
         $subject = "Password Reset Request";
         $message = "To reset your password, click on the following link: " . $resetLink;
-        mail($email, $subject, $message);
+        $headers = "From: delve.project@temesiszabolcsistvan.hu";
+        mail($email, $subject, $message, $headers);
 
         echo "<div style='color: green; position:fixed; border: 1px solid green; border-radius: 5px; margin-top: -20em; font-weight: bold; background-color: #fff; width:35%; text-align:center'>
             An email with password reset instructions has been sent.
