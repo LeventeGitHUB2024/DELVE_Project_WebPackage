@@ -10,6 +10,7 @@ session_start(); // Indítsd el a session-t
     <title>DELVE Registration</title>
     <link rel="stylesheet" href="./css/style.css">
     <script async src="./js/script_registration.js"></script>
+    <script async src="./js/screenSizeChecker.js"></script>
     <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
 </head>
 <body>
@@ -74,5 +75,9 @@ session_start(); // Indítsd el a session-t
     ?>
     <!--<p id='pwcheck' style='color: white'></p>-->
   </div>
+    <div id="message">
+    This site is not mobile friendly, please open this site on a larger screen, or maybe on a PC!
+    </div>
+
 </body>
 </html>
