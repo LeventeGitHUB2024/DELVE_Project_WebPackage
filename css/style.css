@@ -30,6 +30,11 @@ body::before {
   height: 100%;
 }
 
+.delvekep{
+  width: fit-content;
+  height: 4em;
+}
+
 .wrapper {
   width: 400px;
   border-radius: 8px;

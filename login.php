@@ -33,6 +33,7 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
 </head>
 <body>
   <div class="wrapper">
+  <img class="delvekep" src="./img/delve_logo.png">
     <form action="logging_in.php" method="post">
     <h2>Log into your account</h2>
     <div class="input-field">

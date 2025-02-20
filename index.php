@@ -14,6 +14,7 @@ session_start(); // Indítsd el a session-t
 </head>
 <body>
   <div class="wrapper">
+    <img class="delvekep" src="./img/delve_logo.png">
     <form action="register.php" method="post" id="register">
     <h2>Register an account </h2>
     <div class="input-field">
@@ -37,7 +38,7 @@ session_start(); // Indítsd el a session-t
         </div>
       <div class="input-field">
         <input type="password" name="password2" id="password2" required>
-        <label for="password2">Password Again:</label>
+        <label for="password2">Password again:</label>
       </div>
       <div>
         <label class="container">
@@ -50,7 +51,7 @@ session_start(); // Indítsd el a session-t
       <label for="agree">  
       <input type="checkbox" name="agree" class="agree" id="box" value="checked" required/> 
         <p id="white-text">I agree with the            
-        <a href="TOS.html" title="term of services" target="_blank">Terms Of Services</a></p>
+        <a href="TOS.html" title="term of services" target="_blank">Terms of Services</a></p>
         </label>
       </div>
 
