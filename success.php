@@ -12,12 +12,15 @@
     <img src="./img/delve_logo.png" alt="DELVE" class="logo">
     <div id="mainresz">
     <h1>Succesful Registration</h1>
-    <p id="thanks">Thank you for your registration</p>
-    <p id="thanks">Hopefully you did not forgot your details already...</p>
+    <p class="thanks">Thank you for your registration, we appreciate it!</p><br><br>
+    <p class="thanks">Hopefully you did not forgot your details already...</p><br>
+    <p class="thanks">But, even if you did, worry not, you can reset your password from the login page.</p>
     <br>
-    <p id="thanks">If you can still remember you username/email and your password...</p>
+    <br>
+    <p class="thanks">Have fun playing!</p>
     <div id="atiranyitas">
-    <a href="login.php" id="login">Take me to the login page >>></a>
+    <img class="spinning_duck" src="./img/spinning_duck_noBg.gif">
+    <p id="ducksay">Spinning duck says:<a href="login.php" id="login">Click my link!</a></p>
     </div>
     </div>
    

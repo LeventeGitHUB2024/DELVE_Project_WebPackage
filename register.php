@@ -19,6 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Please enter a valid e-mail adress!";
     }
 
+    /*//Enyhébb email validálás
+    if (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/', $email)){
+        $errors[] = "Please enter a valid e-mail adress!";
+    }*/
+
+
     // Jelszó validálása
     if ($password !== $password2) { 
         $errors[] = "Both passwords need to be the same!";
@@ -61,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashedPassword]);
     
     // Sikeres regisztráció után átirányítás
-    header("Location: success.html");
+    header("Location: success.php");
     exit;
 }
 

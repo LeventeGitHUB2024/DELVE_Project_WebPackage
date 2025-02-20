@@ -16,17 +16,27 @@ h1, h2, h3 {
     font-size: larger;
 }
 
-p {
-    margin: 10px 0;
+.spinning_duck{
+    float: right;
+    display:inline;
+    width: 15em;
+    height: 15em;
 }
 
 a {
-    color: #003366; /* hivatkozások színe */
+    color: #095bad; /* hivatkozások színe */
     text-decoration: none;
+    float: right;
+    margin-left: 0.5em;
+}
+
+#ducksay{
+    font-size: 30px;
+    float: right;
 }
 
 a:hover {
-    text-decoration: underline; /* hivatkozások aláhúzása, ha föléjük viszik az egeret */
+    font-weight: bold; /* hivatkozások aláhúzása, ha föléjük viszik az egeret */
 }
 
 .scroll {
@@ -46,9 +56,11 @@ a:hover {
     margin: auto;
 }
 
-#thanks{
-    font-size: 23px;
+.thanks{
+    font-size: 26px;
     text-align: center;
+    margin: 10px 0;
+    display: inline;
 }
 
 #atiranyitas{

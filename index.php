@@ -22,8 +22,8 @@ session_start(); // Indítsd el a session-t
         <label for="username">Username:</label>
         </div>
       <div class="input-field">
-        <input type="email" name="Email_address" id="email" required>
-        <label for="Email_address">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="email">Email:</label>
         </div>
         <div class="input-field">
           <input type="password" name="password" id="password" required>
