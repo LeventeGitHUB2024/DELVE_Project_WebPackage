@@ -27,8 +27,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE UCP</title>
-    <meta content="" name="keywords">
-    <meta content="" name="description">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
@@ -62,12 +60,11 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 <h3 class="text-primary"><img id='delvelogo' src="./img/delve_logo.png" alt="Delve_logo" id="kep"></i>User Control Panel</h3>
                 <a href="#" class="navbar-brand mx-4 mb-3"></a>
                 <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <div id="online" class="position-relative">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mt-3 fs-4"><?php echo htmlspecialchars($user['username']); ?></h6>
+                        <h6 class="mt-3 fs-5"><?php echo htmlspecialchars($user['username']); ?></h6>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -78,7 +75,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <!--<a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>-->
                     <!--<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
                     <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Saves</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Statistics</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Statistics</a> <!--ezek még módosítva lesznek-->
                     <div class="nav-item dropdown">
                         <!--<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -108,77 +105,29 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             <p id='belsotitle' class="mx-auto navbar-brand text-primary"><?php echo htmlspecialchars($user['username']); ?>'s Profile</p>
             </p>
             <div class="navbar-nav align-items-center ms-auto">
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        <i class="fa fa-envelope me-lg-2"></i>
-                        <span class="d-none d-lg-inline-flex">Message</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="ms-2">
-                                    <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                    <small>15 minutes ago</small>
-                                </div>
-                            </div>
-                        </a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="ms-2">
-                                    <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                    <small>15 minutes ago</small>
-                                </div>
-                            </div>
-                        </a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="ms-2">
-                                    <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                    <small>15 minutes ago</small>
-                                </div>
-                            </div>
-                        </a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item text-center">See all message</a>
-                    </div>
-                </div>
+                
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <i class="fa fa-bell me-lg-2"></i>
                         <span class="d-none d-lg-inline-flex">Notification</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">
-                            <h6 class="fw-normal mb-0">Profile updated</h6>
-                            <small>15 minutes ago</small>
-                        </a>
                         <hr class="dropdown-divider">
                         <a href="#" class="dropdown-item">
-                            <h6 class="fw-normal mb-0">New user added</h6>
-                            <small>15 minutes ago</small>
+                            <h6 class="fw-normal mb-0">We are working very hard to complete this page. <br> Thank you for understanding.</h6>
+                            <small>2025.02.21. 10:20</small>
                         </a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">
-                            <h6 class="fw-normal mb-0">Password changed</h6>
-                            <small>15 minutes ago</small>
-                        </a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        <!--<hr class="dropdown-divider">
+                        <a href="#" class="dropdown-item text-center">See all notifications</a>-->
                     </div>
                 </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                         <span class="d-none d-lg-inline-flex"><?php echo htmlspecialchars($user['username']); ?></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">Settings</a>
-                        <a href="logout.php" class="dropdown-item">Log Out</a>
+                        <a href="logout.php" class="dropdown-item">Log Out</a> <!-- ez még trükkös, de inkább a logout fájl kellene polisholni-->
                     </div>
                 </div>
             </div>
@@ -267,27 +216,32 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                                     <th scope="col" class="fs-5 fw-bold">General Account Informations</th>
                                     <th></th>
                                     <th></th>                                    
+                                    <th></th>                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>                                    
                                     <th class="fw-bold">E-mail Adress:</th>
                                     <td></td>
-                                    <td><?php echo htmlspecialchars($user['email']); ?></td>
+                                    <td></td>
+                                    <td class="text_right"><?php echo htmlspecialchars($user['email']); ?></td>
                                 </tr>
                                 <tr>                                    
                                     <th class="fw-bold">Member here since:</th>
-                                    <td>*(According to first save)</td>
-                                    <td><?php echo htmlspecialchars($user['Full_start_date']); ?></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text_right"><?php echo htmlspecialchars($user['registration_date']); ?></td>
                                 </tr>
                                 <tr>
                                 <th class="fw-bold">Longest Playtime:</th>
                                     <td></td>
-                                    <td><?php echo htmlspecialchars($user['playtime']); ?></td>
+                                    <td></td>
+                                    <td class="text_right"><?php echo htmlspecialchars($user['playtime']); ?></td>
                                 </tr>
                                 <th class="fw-bold">Deactivated:</th>
-                                    <td>*(0 means no, 1 means yes)</td>
-                                    <td><?php echo htmlspecialchars($user['deactivated']); ?></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text_right"><?php echo htmlspecialchars($user['deactivated'] == 1) ? 'yes' : 'no'; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -306,7 +260,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div class="h-100 bg-secondary rounded p-4">
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <h6 class="mb-0">Messages</h6>
-                            <a href="">Show All</a>
                         </div>
                         <div class="d-flex align-items-center pt-3">
                             <img class="rounded-circle flex-shrink-0" src="img/favico2.png" alt="" style="width: 47px; height: 45px;">
@@ -322,61 +275,24 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 </div>
                 <div class="col-sm-12 col-md-6 col-xl-4">
                     <div class="h-100 bg-secondary rounded p-4">
+                    <h6 class="mb-0">You can already BETA-TEST our little game here:</h6>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h6 class="mb-0">Calender</h6>
-                            <a href="">Show All</a>
+                            <a href="download.php" class="downloadbtn">
+                            <button>Letöltés</button>
+                            </a>     
                         </div>
-                        <div id="calender"></div>
-                    </div>
+                        <div></div>
+                    </div>  
                 </div>
                 <div class="col-sm-12 col-md-6 col-xl-4">
                     <div class="h-100 bg-secondary rounded p-4">
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h6 class="mb-0">To Do List</h6>
-                            <a href="">Show All</a>
+                            <h6 class="mb-0">Timer (will be)</h6>     
                         </div>
-                        <div class="d-flex mb-2">
-                            <input class="form-control bg-dark border-0" type="text" placeholder="Enter task">
-                            <button type="button" class="btn btn-primary ms-2">Add</button>
-                        </div>
-                        <div class="d-flex align-items-center border-bottom py-2">
-                            <input class="form-check-input m-0" type="checkbox">
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <span>Short task goes here...</span>
-                                    <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center border-bottom py-2">
-                            <input class="form-check-input m-0" type="checkbox">
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <span>Short task goes here...</span>
-                                    <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center border-bottom py-2">
-                            <input class="form-check-input m-0" type="checkbox" checked>
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <span><del>Short task goes here...</del></span>
-                                    <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center border-bottom py-2">
-                            <input class="form-check-input m-0" type="checkbox">
-                            <div class="w-100 ms-3">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <span>Short task goes here...</span>
-                                    <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div id="calender"></div>
+                    </div>  
                 </div>
+                
             </div>
         </div>
         <!-- Widgets End -->
@@ -400,9 +316,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     </div>
     <!-- Content End -->
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top mb-5"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
