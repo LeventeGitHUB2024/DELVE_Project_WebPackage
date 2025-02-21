@@ -21,6 +21,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow:auto;
 }
 
 body::before {
@@ -44,6 +45,8 @@ body::before {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: block;
+  margin-top: 10em;
+  margin-bottom: 8em;
 }
 
 .wrapper.hide{
