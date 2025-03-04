@@ -57,15 +57,15 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
-                <h3 class="text-primary"><img id='delvelogo' src="./img/delve_logo.png" alt="Delve_logo" id="kep"></i>User Control Panel</h3>
+                <h3 class="text-primary"><img id='delvelogo' src="./img/DELVE-PCG_logo2.png" alt="DELVE-PCG_logo" id="kep"></i>User Control Panel</h3>
                 <a href="#" class="navbar-brand mx-4 mb-3"></a>
                 <div class="d-flex align-items-center ms-4 mb-4">
-                    <div id="online" class="position-relative">
+                    <!--<div id="online" class="position-relative">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
-                    <div class="ms-3">
+                    <div class="ms-3 ">
                         <h6 class="mt-3 fs-5"><?php echo htmlspecialchars($user['username']); ?></h6>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="UCP.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>

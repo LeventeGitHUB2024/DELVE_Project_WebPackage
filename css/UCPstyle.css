@@ -429,11 +429,11 @@ button {
 #delvelogo{
     display: block;
     float: left;
-    width: 180px;
+    width: 250px;
     height: 45px;
     margin-right: 9px;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: -15px;
 }
 
 #sitetitle{
