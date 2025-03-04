@@ -26,7 +26,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELVE UCP</title>
+    <title>DELVE-PCG UCP</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
@@ -265,10 +265,20 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             <img class="rounded-circle flex-shrink-0" src="img/favico2.png" alt="" style="width: 47px; height: 45px;">
                             <div class="w-100 ms-3">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h6 class="mb-0">DELVE WebTeam</h6>
+                                    <h6 class="mb-0">DELVE-PCG WebTeam</h6>
                                     <small>1 minutes ago</small>
                                 </div>
                                 <span>Welcome back, <?php echo htmlspecialchars($user['username']); ?>! </span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center pt-3">
+                            <img class="rounded-circle flex-shrink-0" src="img/favico2.png" alt="" style="width: 47px; height: 45px;">
+                            <div class="w-100 ms-3">
+                            <div class="d-flex w-100 justify-content-between mt-4">
+                                    <h6 class="mb-0">DELVE-PCG WebTeam</h6>
+                                    <small>UPDATE</small>
+                                </div>
+                                <span>We have updated our Terms of Service and Privacy Policy, so I guess you should have a look. </span>
                             </div>
                         </div>
                     </div>
