@@ -52,7 +52,7 @@ session_start(); // Indítsd el a session-t
       <label for="agree">  
       <input type="checkbox" name="agree" class="agree" id="box" value="checked" required/> 
         <p id="white-text">I agree with the            
-        <a href="TOS.html" title="term of services" target="_blank">Terms of Services</a></p>
+        <a href="TOS.html" title="The terms of service" target="_blank">Terms of Service</a></p>
         </label>
       </div>
 
