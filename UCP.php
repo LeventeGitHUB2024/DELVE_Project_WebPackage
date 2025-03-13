@@ -57,7 +57,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
-                <h3 class="text-primary"><img id='delvelogo' src="./img/DELVE-PCG_logo2.png" alt="DELVE-PCG_logo" id="kep"></i>User Control Panel</h3>
+                <h3><img id='delvelogo' src="./img/DELVE-PCG_logo2.png" alt="DELVE-PCG_logo" id="kep"></i>User Control Panel</h3>
                 <a href="#" class="navbar-brand mx-4 mb-3"></a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <!--<div id="online" class="position-relative">
@@ -104,7 +104,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 <i class="fa fa-bars"></i>
             </a>
             <p id="sitetitle">
-            <p id='belsotitle' class="mx-auto navbar-brand text-primary"><?php echo htmlspecialchars($user['username']); ?>'s Profile</p>
+            <p id='belsotitle' class="mx-auto navbar-brand"><?php echo htmlspecialchars($user['username']); ?>'s Profile</p>
             </p>
             <div class="navbar-nav align-items-center ms-auto">
                 
