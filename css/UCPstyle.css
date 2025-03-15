@@ -70,7 +70,7 @@
     bottom: 0;
     width: 250px;
     height: 100vh;
-    overflow-y: auto;
+    overflow-y:visible;
     background: var(--secondary);
     transition: 0.5s;
     z-index: 999;
@@ -293,7 +293,7 @@
 
 body {
     line-height: 1.6; /* olvashatóság növelése */
-    overflow: hidden;
+    overflow:auto;
 }
 
 h1, h2, h3 {
@@ -316,17 +316,17 @@ p {
 }
 
 a {
-    color: #003366; /* hivatkozások színe */
+    color: #003366; 
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: none; /* hivatkozások aláhúzása, ha föléjük viszik az egeret */
+    text-decoration: none; 
 }
 
 .ink {
-    color: #003366; /* tinta színe */
-    font-style: italic; /* dőlt betűs stílus */
+    color: #003366; 
+    font-style: italic; 
 }
 
 .logo{

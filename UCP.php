@@ -27,6 +27,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELVE-PCG UCP</title>
+    <script async src="js/screenSizeChecker.js"></script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
@@ -76,8 +77,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <!--<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
                     <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Saves</a>
                     <!--<a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Statistics</a> ezek még módosítva lesznek-->
-                    <a href="TOS.html" class="nav-item nav-link"><i class="fa fa-chart-line me-2"></i>Terms of Service</a>
-                    <a href="privacy_policy.html" class="nav-item nav-link"><i class="fa fa-chart-line me-2"></i>Privacy Policy</a>
+                    <a href="TOS.html" class="nav-item nav-link" target="_blank"><i class="fa fa-chart-line me-2"></i>Terms of Service</a>
+                    <a href="privacy_policy.html" class="nav-item nav-link" target="_blank"><i class="fa fa-chart-line me-2"></i>Privacy Policy</a>
                     <div class="nav-item dropdown">
                         <!--<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -97,9 +98,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="content">
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-            <a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
+            <!--<a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
                 <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
-            </a>
+            </a>-->
             <a href="#" class="sidebar-toggler flex-shrink-0">
                 <i class="fa fa-bars"></i>
             </a>
@@ -315,7 +316,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="bg-secondary rounded-top p-4">
                 <div class="row">
                     <div class="col-12 col-sm-6 text-center text-sm-start">
-                        &copy; <a href="#">DELVE UCP</a>, All Right Reserved.
+                        &copy; <strong>DELVE-PCG</strong>, All Right Reserved.
                     </div>
                     <div class="col-12 col-sm-6 text-center text-sm-end">
                         Designed By Szabó Levente</a>
@@ -325,6 +326,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
         <!-- Footer End -->
+    </div>
+    <div id="message">
+    This site is not mobile friendly, please open this site on a larger screen, or maybe on a PC!   
     </div>
     <!-- Content End -->
 
@@ -343,5 +347,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <!-- Template Javascript -->
     <script src="js/UCPmain.js"></script>
+    
 </body>
 </html>

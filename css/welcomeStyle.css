@@ -54,6 +54,8 @@ a:hover {
 .logo{
     display: block;
     margin: auto;
+    width: 40em;
+    height: 7em;
 }
 
 .thanks{

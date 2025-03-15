@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <img src="./img/delve_logo.png" alt="DELVE" class="logo">
+    <img src="./img/DELVE-PCG_logo2.png" alt="DELVE" class="logo">
     <div id="mainresz">
     <h1>Succesful Registration</h1>
     <p class="thanks">Thank you for your registration, we appreciate it!</p><br><br>
