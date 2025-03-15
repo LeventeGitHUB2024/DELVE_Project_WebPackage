@@ -7,7 +7,7 @@ session_start(); // Indítsd el a session-t
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
-    <title>DELVE Registration</title>
+    <title>DELVE-PCG Registration</title>
     <link rel="stylesheet" href="./css/style.css">
     <script async src="./js/script_registration.js"></script>
     <script async src="./js/screenSizeChecker.js"></script>
@@ -15,7 +15,7 @@ session_start(); // Indítsd el a session-t
 </head>
 <body>
   <div class="wrapper">
-    <img class="delvekep" src="./img/delve_logo.png">
+    <img class="delvekep" src="./img/DELVE-PCG_logo2.png">
     <form action="register.php" method="post" id="register">
     <h2>Register an account </h2>
     <div class="input-field">

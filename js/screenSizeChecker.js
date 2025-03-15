@@ -6,7 +6,7 @@ function checkResolution() {
     const wrapper = document.querySelector('.wrapper');
 
 
-            if (width < 550 || height < 655) {
+            if (width < 550 || height < 500) {
                message.style.display = 'block';
                wrapper.classList.add('hide');
             }else{

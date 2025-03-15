@@ -26,14 +26,14 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELVE Login</title>
+    <title>DELVE-PCG Login</title>
     <link rel="stylesheet" href="./css/style_login.css">
     <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
     <script async src="./js/script_login.js"></script>
 </head>
 <body>
   <div class="wrapper">
-  <img class="delvekep" src="./img/delve_logo.png">
+  <img class="delvekep" src="./img/DELVE-PCG_logo2.png">
     <form action="logging_in.php" method="post">
     <h2>Log into your account</h2>
     <div class="input-field">

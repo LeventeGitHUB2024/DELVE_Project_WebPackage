@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELVE Forgotten Password</title>
+    <title>DELVE-PCG Forgotten Password</title>
     <link rel="stylesheet" href="./css/forgotten.css">
     <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
     <script async src="./js/alertRemover.js"></script>
