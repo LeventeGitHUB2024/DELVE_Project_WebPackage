@@ -48,6 +48,18 @@ body::before {
   margin-top: -1.5em;
 }
 
+.wrapper.hide{
+  display: none;
+}
+
+#message {
+  display: none;
+  background-color:#721c24;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+}
+
 form {
   display: flex;
   flex-direction: column;

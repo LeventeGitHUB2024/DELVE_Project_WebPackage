@@ -30,6 +30,7 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
     <link rel="stylesheet" href="./css/style_login.css">
     <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
     <script async src="./js/script_login.js"></script>
+    <script async src="./js/screenSizeChecker.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -76,9 +77,11 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
     }
      // Üresítsd ki a hibákat, hogy ne jelenjenek meg újra
      unset($_SESSION['errors']);
-  }
+    }
     ?>
-
+  </div>
+  <div id="message">
+      This site is not mobile friendly, please open this site on a larger screen, or maybe on a PC!
   </div>
 </body>
 </html>

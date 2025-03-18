@@ -316,12 +316,13 @@ p {
 }
 
 a {
-    color: #003366; 
+    color: #0553a1; 
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: none; 
+    color:dodgerblue;
 }
 
 .ink {
@@ -436,6 +437,18 @@ button {
     margin-top: 10px;
     margin-left: -15px;
 }
+
+.wrapper.hide{
+    display: none;
+}
+  
+#message {
+    display: none;
+    background-color:#721c24;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+  }
 
 #sitetitle{
     text-align: center;
