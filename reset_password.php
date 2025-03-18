@@ -55,14 +55,14 @@ if (isset($_GET['token'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELVE Password Reset</title>
+    <title>DELVE-PCG Password Reset</title>
     <link rel="stylesheet" href="./css/password_reset.css">
     <link rel="shortcut icon" href="./img/favico2.png" type="image/png">
     <script async src="./js/script_registration.js"></script>
 </head>
 <body>
 <div id="logo">
-    <img src="./img/delve_logo.png" alt="DELVE_logo" >
+    <img src="./img/DELVE-PCG_logo2.png" alt="DELVE_PCG_logo" >
 </div>
 <div>
 <h2 style="text-align: center">Enter your new password</h2>
