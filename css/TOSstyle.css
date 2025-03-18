@@ -28,5 +28,9 @@ li {
 
 .links{
     text-decoration: none;
-    color:dodgerblue;
+    color:rgb(10, 128, 246);
+}
+
+.links:hover{
+    color:#085bad;
 }
