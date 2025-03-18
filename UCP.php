@@ -26,7 +26,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELVE-PCG UCP</title>
+    <title>DELVE-PCG UCP Dashboard</title>
     <script async src="./js/screenSizeChecker.js"></script>
 
     <!-- Favicon -->
@@ -61,31 +61,14 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <h3><img id='delvelogo' src="./img/DELVE-PCG_logo2.png" alt="DELVE-PCG_logo" id="kep"></i>User Control Panel</h3>
                     <a href="#" class="navbar-brand mx-4 mb-3"></a>
                     <div class="d-flex align-items-center ms-4 mb-4">
-                        <!--<div id="online" class="position-relative">
-                            <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                        </div>
-                        <div class="ms-3 ">
-                            <h6 class="mt-3 fs-5"><?php echo htmlspecialchars($user['username']); ?></h6>
-                        </div>-->
                     </div>
                     <div class="navbar-nav w-100">
                         <a href="UCP.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                        <!--<div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                        </div>-->
-                        <!--<a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>-->
                         <!--<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
-                        <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Saves</a>
-                        <!--<a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Statistics</a> ezek még módosítva lesznek-->
+                        <a href="saves.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Saves</a>
                         <a href="TOS.html" class="nav-item nav-link" target="_blank"><i class="fa fa-chart-line me-2"></i>Terms of Service</a>
                         <a href="privacy_policy.html" class="nav-item nav-link" target="_blank"><i class="fa fa-chart-line me-2"></i>Privacy Policy</a>
                         <div class="nav-item dropdown">
-                            <!--<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                            <div class="dropdown-menu bg-transparent border-0">
-                                <a href="signin.html" class="dropdown-item">Sign In</a>
-                                <a href="signup.html" class="dropdown-item">Sign Up</a>
-                                <a href="404.html" class="dropdown-item">404 Error</a>
-                                <a href="blank.html" class="dropdown-item">Blank Page</a>-->
                         </div>
                     </div>
             </div>
@@ -98,9 +81,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <!--<a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
-                </a>-->
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -120,8 +100,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                                 <h6 class="fw-normal mb-0">We are working very hard to complete this page. <br> Thank you for understanding.</h6>
                                 <small>Currently</small>
                             </a>
-                            <!--<hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>-->
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -138,7 +116,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             <!-- Navbar End -->
 
 
-            <!-- később felhasználandó
+            <!-- később felhasználható
                 
                 <div class="container-fluid pt-4 px-4">
                     <div class="row g-4">
