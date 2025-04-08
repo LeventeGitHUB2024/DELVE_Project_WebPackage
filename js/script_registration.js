@@ -5,7 +5,6 @@
 document.getElementById('password1check').addEventListener('change',function(){
   var pw1 = document.getElementById('password');
 
-  // Ha be van pipálva, változtasd meg a jelszó mező típusát 'text'-re
   if (this.checked){
     pw1.type = 'password';
   } else{
