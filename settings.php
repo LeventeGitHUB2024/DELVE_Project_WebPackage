@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare("UPDATE players_pyr SET deactivated = 1 WHERE email = :email");
             $stmt->execute(['email' => $_SESSION['user_email']]);
 
-            // (opcionális) Jelszó véletlenszerű módosítása
+            //Jelszó véletlenszerű módosítása
             
             $newPass = bin2hex(random_bytes(3));
             $hashedPass = password_hash($newPass, PASSWORD_DEFAULT);
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute(['password' => $hashedPass, 'email' => $_SESSION['user_email']]);
 
             session_destroy();
-            header('Location: deactivated.html');
+            header('Location: login.php');
             exit;
         } else {
             $errors[] = "The confirmation word is incorrect. Please type it exactly as: DEACTIVATE.";

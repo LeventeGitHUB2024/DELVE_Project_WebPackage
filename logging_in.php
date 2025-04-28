@@ -25,8 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Ha nincs találat
     if (!$user) {
-        $errors[] = "You don't have an account, create one before logging in, it might just help! 😉";
-    } else {
+        
+        if ($user['deactivated'] == 1) {
+            $errors[] = "This account has been deactivated. Please create a new one. If you think this is a mistake, please reach out to us at delve.project@temesiszabolcsistvan.hu";
+        } else{
+            $errors[] = "You don't have an account, create one before logging in, it might just help! 😉";
+        }  
+    }
+    
+    else {
         if (password_verify($password, $user['password'])) {
             // Jelszó helyes, felhasználó belép
             $_SESSION['user_email'] = $user['email'];

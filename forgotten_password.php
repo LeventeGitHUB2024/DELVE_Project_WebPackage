@@ -13,6 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
+
+        if ($user['deactivated'] == 1) {
+            $errors[] = "This account has been deactivated. Please create a new one. If you think this is a mistake, please reach out to us at delve.project@temesiszabolcsistvan.hu";
+        }
+        else {
+
         // Generálj egy egyedi token-t
         $token = bin2hex(random_bytes(16));
 
@@ -30,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<div style='color: green; position:fixed; border: 1px solid green; border-radius: 5px; margin-top: -20em; font-weight: bold; background-color: #fff; width:35%; text-align:center'>
             An email with password reset instructions has been sent.
           </div>";
+        }
     } else {
         $errors[] = "No account found with that email.";
     }
@@ -50,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <a class="link" href="http://temesiszabolcsistvan.hu/login.php">Back to login page</a>
 
 <div>
-<h2>The first step to reset your password</h2>
+<h2 id="maintitle">The first step to reset your password</h2>
   <form method="post" action="forgotten_password.php">
     <div class="input-field">
     <input type="email" name="email" id='email' required>
