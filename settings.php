@@ -20,22 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!preg_match('/^[a-zA-Z0-9_]{6,20}$/', $newUsername)) {
             $errors[] = "The username needs to be between 6 and 20 characters, and only letters, numbers and underscore is allowed.";
         } else {
-            $stmt = $pdo->prepare("UPDATE players_pyr SET username = :username WHERE id = :id");
-            $stmt->execute(['username' => $newUsername, 'id' => $_SESSION['user_id']]);
+            $stmt = $pdo->prepare("UPDATE players_pyr SET username = :username WHERE email = :email");
+            $stmt->execute(['username' => $newUsername, 'email' => $_SESSION['user_email']]);
             $success[] = "Username successfully updated.";
-        }
-    }
-
-    // Email módosítása
-    if (!empty($_POST['emailChange'])) {
-        $newEmail = trim($_POST['emailChange']);
-
-        if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Wrong e-mail address.";
-        } else {
-            $stmt = $pdo->prepare("UPDATE players_pyr SET email = :email WHERE id = :id");
-            $stmt->execute(['email' => $newEmail, 'id' => $_SESSION['user_id']]);
-            $success[] = "E-mail successfully updated.";
         }
     }
 
@@ -50,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors[] = "The password's lenght needs to be between 8 and 255 characters.";
         } else {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare("UPDATE players_pyr SET password = :password WHERE id = :id");
-            $stmt->execute(['password' => $hashedPassword, 'id' => $_SESSION['user_id']]);
+            $stmt = $pdo->prepare("UPDATE players_pyr SET password = :password WHERE email = :email");
+            $stmt->execute(['password' => $hashedPassword, 'email' => $_SESSION['user_email']]);
             $success[] = "Password successfully updated.";
         }
     }
@@ -59,15 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Fiók deaktiválása
     if (isset($_POST['deactivateAccount'])) {
         if (isset($_POST['confirmText']) && $_POST['confirmText'] === 'DEACTIVATE') {
-            $stmt = $pdo->prepare("UPDATE players_pyr SET deactivated = 1 WHERE id = :id");
-            $stmt->execute(['id' => $_SESSION['user_id']]);
+            $stmt = $pdo->prepare("UPDATE players_pyr SET deactivated = 1 WHERE email = :email");
+            $stmt->execute(['email' => $_SESSION['user_email']]);
 
             // (opcionális) Jelszó véletlenszerű módosítása
             
             $newPass = bin2hex(random_bytes(3));
             $hashedPass = password_hash($newPass, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare("UPDATE players_pyr SET password = :password WHERE id = :id");
-            $stmt->execute(['password' => $hashedPass, 'id' => $_SESSION['user_id']]);
+            $stmt = $pdo->prepare("UPDATE players_pyr SET password = :password WHERE email = :email");
+            $stmt->execute(['password' => $hashedPass, 'email' => $_SESSION['user_email']]);
 
             session_destroy();
             header('Location: deactivated.html');
@@ -104,22 +91,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </button>
         </form>
         
-        <h3>Change your email:</h3>
-        <p>You will be able to change it here:</p>
-        <form action="settings.php" method="post">
-            <input type="email" name="emailChange" class="Change" placeholder="New email address" required>
-            <button type="submit">
-                <span class="transition"></span>
-                <span class="gradient"></span>
-                <span class="label">Submit your new email address</span>    
-            </button>
-        </form>
-        
         <h3>Change your password</h3>
         <p>You will be able to change it here:</p>
         <form action="settings.php" method="post">
             <input type="password" name="passwordChange" class="Change" placeholder="New password" required>
             <input type="password" name="passwordChange2" class="Change" placeholder="New password again" required>
+           <br>
             <button type="submit">
                 <span class="transition"></span>
                 <span class="gradient"></span>
@@ -132,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
            <br> So think twice before doing it so.</p>
         <form action="settings.php" method="post" onsubmit="return confirmDeactivation();">
             <label for="confirmText">Type <strong>DEACTIVATE</strong> to confirm the deactivation of your account.</label>
-            <input type="text" name="confirmText" id="confirmText" required class="Change">
+            <input type="text" name="confirmText" email="confirmText" required class="Change">
             <input type="hidden" name="deactivateAccount" value="1">
             <button type="submit">
                     <span class="transition2"></span>

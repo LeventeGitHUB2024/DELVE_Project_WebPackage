@@ -49,6 +49,8 @@ li {
     border: none;
     border-radius: 10px;
     transition: all .5s;
+    margin-bottom: 1em;
+    margin-top: 0.7em;
   }
 
   .Change:hover {
@@ -87,6 +89,7 @@ button {
   .label {
     position: relative;
     top: -1px;
+    padding-top: 0.2em;
   }
   
   .transition {
