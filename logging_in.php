@@ -25,16 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Ha nincs találat
     if (!$user) {
-        
-        if ($user['deactivated'] == 1) {
-            $errors[] = "This account has been deactivated. Please create a new one. If you think this is a mistake, please reach out to us at delve.project@temesiszabolcsistvan.hu";
-        } else{
             $errors[] = "You don't have an account, create one before logging in, it might just help! 😉";
-        }  
     }
     
     else {
-        if (password_verify($password, $user['password'])) {
+        if (password_verify($password, $user['password']) && $user['deactivated'] != 1) {
             // Jelszó helyes, felhasználó belép
             $_SESSION['user_email'] = $user['email'];
 
@@ -55,9 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Átirányítás a dashboardra
             header("Location: UCP.php");
             exit;
+        
+
         } else {
             // Helytelen jelszó
-            $errors[] = "Wrong, or just simply incorrect password! \n Are you sure you didn't mistyped it?";
+            $errors[] = "Wrong password! \n Are you sure you didn't mistyped it?, Or maybe is your account deactivated?";
         }
     }
 
