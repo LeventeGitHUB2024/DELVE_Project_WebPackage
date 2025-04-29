@@ -43,8 +43,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->execute(['token' => $token, 'email' => $user['email']]);
 
                 // Állítsunk be cookie-kat
-                setcookie('remember_me', $token, time() + 600, '/', '', false, true); // 10 perc
-                setcookie('remember_user', $user['username'], time() + 600, '/', '', false, true);
+                $expiry = time() + 60 * 60 * 24 * 30;
+                
+                // Token – csak szerver láthatja, HTTPS-re korlátozva
+                setcookie('remember_me', $token, [
+                    'expires' => $expiry,
+                    'path' =>  '/',
+                    'secure' => true,       // csak HTTPS
+                    'httponly' => true,     // ne férjen hozzá JS
+                    'samesite' => 'Lax'
+                ]); 
+                // 30 nap
+                
+                // Email – tokenhez tartozik, lehet szintén HttpOnly
+                setcookie('remember_email', $user['email'], [
+                    'expires' => $expiry,
+                    'path' =>  '/',
+                    'secure' => true,
+                    'httponly' => true,
+                    'samesite' => 'Lax'
+
+                ]);
+
+                // Username – ez JS-hez is kellhet, nem HttpOnly
+                setcookie('remember_user', $user['username'], [
+                    'expires' => $expiry,
+                    'path' =>  '/',
+                    'secure' => true,
+                    'httponly' => false,
+                    'samesite' => 'Lax'
+
+                ]);
             }
 
             // Átirányítás a dashboardra

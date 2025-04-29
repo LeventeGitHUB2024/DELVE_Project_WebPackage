@@ -2,37 +2,50 @@
 session_start();
 require 'db.php';
 
-$rememberMeSet = isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user']);
+$pdo = db();
 
-// Ha a felhasználó be van jelentkezve, töröljük a tokent az adatbázisból
+
+// Ellnőrizzük, hogy a felhasználó be van-e jelentkezve
 if (isset($_SESSION['user_email'])) {
-    $pdo = db();
+    $userEmail = $_SESSION['user_email'];
 
-    // Ha a "remember me" aktív volt, akkor megtartjuk a felhasználó nevét
-    if (isset($_COOKIE['remember_me']) && $_COOKIE['remember_me'] == '1') {
-        // Az email és a felhasználónevet itt kezelheted
-        $_SESSION['user_email'] = $_SESSION['user_email'];
+    // Megnézzük, hogy be van-e jelölve a "Remember Me"
+    $rememberMe = isset($_COOKIE['remember_me']) && $_COOKIE['remember_me'] === '1';
 
-    } else {
-        // Ha nincs "remember me", töröljük a felhasználó nevet a session-ből
-        unset($_SESSION['user_email']);
-        
-        // Ezt kiírjuk a felhasználónév mezőben
-        $username = ''; // Üres string, ha nem emlékezünk rá
-
-        // Ha a token is felesleges, töröljük az adatbázisból
+    if(!$rememberMe){
         $stmt = $pdo->prepare("UPDATE players_pyr SET remember_token = NULL WHERE email = :email");
-        $stmt->execute(['email' => $_SESSION['user_email']]); //még mindig nem tökéletes
+        $stmt->execute(['email' => $userEmail]);
+
+        //Itt töröljük a cookie-kat, mert nincs "Remember Me"
+        setcookie('remember_me', '', [
+            'expires' => time() - 3600,
+            'path' => '/',
+            'secure' => false,
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]);
+
+        setcookie('remember_email', '', [
+            'expires' => time() - 3600,
+            'path' => '/',
+            'secure' => true,
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]);
+
+        setcookie('remember_user', '', [
+            'expires' => time() - 3600,
+            'path' => '/',
+            'secure' => true,
+            'httponly' => false,
+            'samesite' => 'Lax'
+        ]);
     }
 }
 
-// Csak akkor töröljük a cookie-kat, ha nincs "Remember Me" funkcióhoz kötve
-if (!$rememberMeSet) {
-    setcookie('remember_me', '', time() - 3600, '/', '', false, true);
-    setcookie('remember_user', '', time() - 3600, '/', '', false, true);
-}
-
 // Session törlése
+$_SESSION = [];
+session_unset();
 session_destroy();
 
 // Átirányítás a bejelentkezési oldalra

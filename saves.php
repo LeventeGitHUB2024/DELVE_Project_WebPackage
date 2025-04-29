@@ -67,9 +67,10 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             <a href="#" class="nav-link" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         </div> ezt még a régebbi verziók letöltésénél lehet használnám-->
                         <!--<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
-                    <a href="saves.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Saves</a>
-                    <a href="TOS.html" class="nav-item nav-link" target="_blank"><i class="fa fa-chart-line me-2"></i>Terms of Service</a>
-                    <a href="privacy_policy.html" class="nav-item nav-link" target="_blank"><i class="fa fa-chart-line me-2"></i>Privacy Policy</a>
+                    <a href="saves.php" class="nav-item nav-link active"><i class="fa fas fa-save me-2"></i>Saves</a>
+                    <a href="versions.php" class="nav-item nav-link"><i class="fa fa-sharp-duotone fa-light fa-download me-2"></i>Other Versions</a>
+                    <a href="TOS.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Terms of Service</a>
+                    <a href="privacy_policy.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Privacy Policy</a>
                     <div class="nav-item dropdown">
                     </div>
                 </div>

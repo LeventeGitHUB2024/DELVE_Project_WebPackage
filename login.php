@@ -8,15 +8,18 @@ $prefilledUsername = '';
 // Ha a "remember_me" cookie érvényes, töltsük ki az adatokat
 if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
     $pdo = db();
-    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE username = :username AND remember_token = :token");
+    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE email = :email AND remember_token = :token");
     $stmt->execute([
-        'username' => $_COOKIE['remember_user'],
+        'email' => $_COOKIE['remember_email'],
         'token' => $_COOKIE['remember_me']
     ]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
         $prefilledUsername = htmlspecialchars($user['username']); 
+    }
+    elseif (isset($_COOKIE['remember_user'])){
+      $prefilledUsername = htmlspecialchars($_COOKIE['remember_user']);
     }
 }
 ?>
@@ -59,7 +62,8 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
     </div>
     <div id="remember">
       <label for="remember_me">  
-      <input type="checkbox" name="remember_me" class="remember" id="remember_me"/> 
+      <input type="checkbox" name="remember_me" class="remember" id="remember_me"
+      <?php if (isset($_COOKIE['remember_me']) && $_COOKIE['remember_me']) echo 'checked';?> /> 
         <p id="white-text2">Remember me</p>
       </label>
     </div>

@@ -26,7 +26,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELVE-PCG UCP Dashboard</title>
+    <title>DELVE-PCG UCP Versions</title>
     <script async src="./js/screenSizeChecker.js"></script>
 
     <!-- Favicon -->
@@ -63,12 +63,12 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div class="d-flex align-items-center ms-4 mb-4">
                     </div>
                     <div class="navbar-nav w-100">
-                        <a href="UCP.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                        <a href="UCP.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                         <!--<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
                         <a href="saves.php" class="nav-item nav-link"><i class="fa fas fa-save me-2"></i>Saves</a>
-                        <a href="versions.php" class="nav-item nav-link"><i class="fa fa-sharp-duotone fa-light fa-download me-2"></i>Other Versions</a>
+                        <a href="versions.php" class="nav-item nav-link active"><i class="fa fa-sharp-duotone fa-light fa-download me-2"></i>Other Versions</a>
                         <a href="TOS.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Terms of Service</a>
-                        <a href="privacy_policy.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Privacy Policy</a>
+                        <a href="privacy_policy.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Privacy Policy</a>    
                         <div class="nav-item dropdown">
                         </div>
                     </div>
@@ -195,7 +195,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             <table class="table table-hover">
                                 <thead>
                                     <tr>                                    
-                                        <th scope="col" class="fs-5 fw-bold">General Account Informations</th>
+                                        <th scope="col" class="fs-5 fw-bold">Here are the versions avaiable right now:</th>
                                         <th></th>
                                         <th></th>                                    
                                         <th></th>                                    
@@ -203,27 +203,22 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                                 </thead>
                                 <tbody>
                                     <tr>                                    
-                                        <th class="fw-bold">E-mail Adress:</th>
+                                        <th class="fw-bold">DELVE PCG BETA Version 0.1</th>
                                         <td></td>
                                         <td></td>
-                                        <td class="text_right"><?php echo htmlspecialchars($user['email']); ?></td>
+                                        <td class="text_right"><a href="download_DelveV0.1.php" class="downloadbtn2">
+                                        <button>Download</button>
+                                        </a>     
+                                        </td>
                                     </tr>
                                     <tr>                                    
-                                        <th class="fw-bold">Member here since:</th>
+                                        <th class="fw-bold">DELVE PCG BETA Version 0.2</th>
                                         <td></td>
                                         <td></td>
-                                        <td class="text_right"><?php echo htmlspecialchars($user['registration_date']); ?></td>
-                                    </tr>
-                                    <tr>
-                                    <th class="fw-bold">Longest Playtime:</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text_right"><?php echo htmlspecialchars($user['playtime']); ?></td>
-                                    </tr>
-                                    <th class="fw-bold">Deactivated:</th>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text_right"><?php echo htmlspecialchars($user['deactivated'] == 1) ? 'yes' : 'no'; ?></td>
+                                        <td class="text_right"><a href="download_DelveV0.2.php" class="downloadbtn2">
+                                        <button>Download</button>
+                                        </a>     
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -234,62 +229,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             <!--  User Informations End -->
 
-
-            <!-- Widgets Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">Messages</h6>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">                        
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-2">DELVE-PCG WebTeam</h6>
-                                        <small></small>
-                                    </div>
-                                    <span>Welcome back, <?php echo htmlspecialchars($user['username']); ?>! </span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                
-                                <div class="w-100 ms-3">
-                                <div class="d-flex w-100 justify-content-between mt-4">
-                                        <h6 class="mb-2">DELVE-PCG WebTeam</h6>
-                                        <small>UPDATE-End of Q1, 2025</small>
-                                    </div>
-                                    <span>We have updated our Terms of Service and Privacy Policy, so I guess you should have a look. </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                        <h6 class="mb-0">You can already BETA-TEST our little game's newest version here:</h6>
-                        
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <a href="download.php" class="downloadbtn">
-                                <button>Download</button>
-                                </a>     
-                            </div>
-                            <div></div>
-                            <h6 class="mb-0">Soon you can find the older versions at the other versions tab, or by clicking 
-                                <a href="versions.php">here</a>.</h6>
-                        </div>  
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Current date</h6>     
-                            </div>
-                            <div id="calender"></div>
-                        </div>  
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- Widgets End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
