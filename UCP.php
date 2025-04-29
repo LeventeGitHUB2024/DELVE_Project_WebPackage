@@ -257,9 +257,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                                 <div class="w-100 ms-3">
                                 <div class="d-flex w-100 justify-content-between mt-4">
                                         <h6 class="mb-2">DELVE-PCG WebTeam</h6>
-                                        <small>UPDATE-End of Q1, 2025</small>
+                                        <small>UPDATE-Start of Q2, 2025</small>
                                     </div>
-                                    <span>We have updated our Terms of Service and Privacy Policy, so I guess you should have a look. </span>
+                                    <span>Now you can finally check out other versions of the game, on the "Other Versions" tab. As well as a working settings menu, where you can change your password, username and can deactivate your account. (Careful with the last one!) </span>
                                 </div>
                             </div>
                         </div>
@@ -274,7 +274,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                                 </a>     
                             </div>
                             <div></div>
-                            <h6 class="mb-0">Soon you can find the older versions at the other versions tab, or by clicking 
+                            <h6 class="mb-0">The other versions tab is finally public, you can find it on the left side bar or by clicking 
                                 <a href="versions.php">here</a>.</h6>
                         </div>  
                     </div>

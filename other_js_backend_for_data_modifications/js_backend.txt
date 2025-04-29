@@ -1,0 +1,62 @@
+//Egyszerű szerver létrehozása (Express + SQLite)
+
+// index.js
+const express = require('express');
+const bodyParser = require('body-parser');
+const sqlite3 = require('sqlite3').verbose();
+const cors = require('cors');
+
+const app = express();
+const db = new sqlite3.Database('./data.db');
+
+app.use(cors());
+app.use(bodyParser.json());
+
+// Inicializálás
+db.run(`CREATE TABLE IF NOT EXISTS saves (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user TEXT,
+  data TEXT
+)`);
+
+// Példa: mentés feltöltése
+app.post('/save', (req, res) => {
+  const { user, data } = req.body;
+  db.run(`INSERT INTO saves (user, data) VALUES (?, ?)`, [user, JSON.stringify(data)], function (err) {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ id: this.lastID });
+  });
+});
+
+// Lekérés
+app.get('/save/:id', (req, res) => {
+  db.get(`SELECT * FROM saves WHERE id = ?`, [req.params.id], (err, row) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(row);
+  });
+});
+
+app.listen(3000, () => console.log('API fut a http://localhost:3000 címen'));
+
+
+🌐 Godot oldali példa (GDScript):
+gdscript
+Másolás
+Szerkesztés
+var url = "http://localhost:3000/save"
+var http = HTTPRequest.new()
+add_child(http)
+
+func save_game():
+    var save_data = {"user": "player1", "data": {"level": 3, "score": 2500}}
+    http.request(url, [], true, HTTPClient.METHOD_POST, to_json(save_data))
+
+
+☁️ Feltöltés szerverre (Nethely)
+A Nethely valószínűleg nem támogat Node.js alkalmazások futtatását (csak PHP/Apache). Node.js-hez inkább VPS vagy valamilyen felhős szolgáltatás kell (pl. Render.com, Railway, Fly.io, Vercel, DigitalOcean, Hetzner).
+
+De lokálisan fejlesztheted Node.js-ben, aztán eldöntöd:
+
+Node.js alkalmazást szerverre teszel (VPS)
+
+vagy visszaviszed PHP-be a logikát
