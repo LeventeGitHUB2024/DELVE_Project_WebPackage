@@ -73,7 +73,6 @@ session_start(); // Indítsd el a session-t
         unset($_SESSION['errors']);
     }
     ?>
-    <!--<p id='pwcheck' style='color: white'></p>-->
   </div>
     <div id="message">
     This site is not mobile friendly, please open this site on a larger screen, or maybe on a PC!

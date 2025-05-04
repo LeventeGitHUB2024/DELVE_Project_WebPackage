@@ -1,27 +1,6 @@
 <?php
 session_start();
 require 'db.php';
-
-// Alapértelmezett mezőértékek
-$prefilledUsername = '';
-
-// Ha a "remember_me" cookie érvényes, töltsük ki az adatokat
-if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
-    $pdo = db();
-    $stmt = $pdo->prepare("SELECT * FROM players_pyr WHERE email = :email AND remember_token = :token");
-    $stmt->execute([
-        'email' => $_COOKIE['remember_email'],
-        'token' => $_COOKIE['remember_me']
-    ]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user) {
-        $prefilledUsername = htmlspecialchars($user['username']); 
-    }
-    elseif (isset($_COOKIE['remember_user'])){
-      $prefilledUsername = htmlspecialchars($_COOKIE['remember_user']);
-    }
-}
 ?>
 
 <!DOCTYPE html>

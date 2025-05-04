@@ -5,6 +5,7 @@ const DB_NAME = 'delvemain';                       // Az adatbázis neve
 const DB_USER = 'delvemain';                       // Az adatbázis felhasználója
 const DB_PASSWORD = 'swaws123//';                  // Az adatbázis jelszava
 
+//Létrehozza és visszaadja az adatbázis kapcsolatot (PDO objektum).
 function db(): PDO
 {
     static $pdo;
