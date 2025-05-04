@@ -1,8 +1,0 @@
-miket kellene fixelni
-
-login oldalon fixelni a remember me-t mert csak akkor lehet bejelentkezni ha be van kattintva és nem is jegyzi meg
-sem a username-t sem a jelszót (kitöröltem, most fogom majd újraimplementálni)
-
-Tamado.Toszl0p
-
-fefefefefefefE3$

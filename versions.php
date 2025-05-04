@@ -64,8 +64,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     </div>
                     <div class="navbar-nav w-100">
                         <a href="UCP.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                        <!--<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
-                        <a href="saves.php" class="nav-item nav-link"><i class="fa fas fa-save me-2"></i>Saves</a>
                         <a href="versions.php" class="nav-item nav-link active"><i class="fa fa-sharp-duotone fa-light fa-download me-2"></i>Other Versions</a>
                         <a href="TOS.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Terms of Service</a>
                         <a href="privacy_policy.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Privacy Policy</a>    
@@ -98,8 +96,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">We are working very hard to complete this page. <br> Thank you for understanding.</h6>
-                                <small>Currently</small>
+                                <h6 class="fw-normal mb-0">Thank you for your patience, the site is now finished. Have a nice day!</h6>
+                                <small>2025.05.04.</small>
                             </a>
                         </div>
                     </div>

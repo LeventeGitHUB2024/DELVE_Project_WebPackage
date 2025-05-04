@@ -64,8 +64,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     </div>
                     <div class="navbar-nav w-100">
                         <a href="UCP.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                        <!--<a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>-->
-                        <a href="saves.php" class="nav-item nav-link"><i class="fa fas fa-save me-2"></i>Saves</a>
                         <a href="versions.php" class="nav-item nav-link"><i class="fa fa-sharp-duotone fa-light fa-download me-2"></i>Other Versions</a>
                         <a href="TOS.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Terms of Service</a>
                         <a href="privacy_policy.html" class="nav-item nav-link" target="_blank"><i class="fa ffa-solid fa-newspaper me-2"></i>Privacy Policy</a>
@@ -98,8 +96,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">We are working very hard to complete this page. <br> Thank you for understanding.</h6>
-                                <small>Currently</small>
+                                <h6 class="fw-normal mb-0">Thank you for your patience, the site is now finished. Have a nice day!</h6>
+                                <small>2025.05.04.</small>
                             </a>
                         </div>
                     </div>
@@ -109,82 +107,12 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="settings.php" target="_blank" class="dropdown-item">Settings</a>
-                            <a href="logout.php" class="dropdown-item">Log Out</a> <!-- ez még trükkös, de inkább a logout fájl kellene polisholni-->
+                            <a href="logout.php" class="dropdown-item">Log Out</a> 
                         </div>
                     </div>
                 </div>
             </nav>
             <!-- Navbar End -->
-
-
-            <!-- később felhasználható
-                
-                <div class="container-fluid pt-4 px-4">
-                    <div class="row g-4">
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                                <i class="fa fa-chart-line fa-3x text-primary"></i>
-                                <div class="ms-3">
-                                    <p class="mb-2">Today Sale</p>
-                                    <h6 class="mb-0">$1234</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                                <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                                <div class="ms-3">
-                                    <p class="mb-2">Total Sale</p>
-                                    <h6 class="mb-0">$1234</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                                <i class="fa fa-chart-area fa-3x text-primary"></i>
-                                <div class="ms-3">
-                                    <p class="mb-2">Today Revenue</p>
-                                    <h6 class="mb-0">$1234</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xl-3">
-                            <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                                <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                                <div class="ms-3">
-                                    <p class="mb-2">Total Revenue</p>
-                                    <h6 class="mb-0">$1234</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <div class="container-fluid pt-4 px-4">
-                    <div class="row g-4">
-                        <div class="col-sm-12 col-xl-6">
-                            <div class="bg-secondary text-center rounded p-4">
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h6 class="mb-0">Worldwide Sales</h6>
-                                    <a href="">Show All</a>
-                                </div>
-                                <canvas id="worldwide-sales"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-xl-6">
-                            <div class="bg-secondary text-center rounded p-4">
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h6 class="mb-0">Salse & Revenue</h6>
-                                    <a href="">Show All</a>
-                                </div>
-                                <canvas id="salse-revenue"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                eddig -->
-
 
             <!--- User Informations -->
             <div class="container-fluid pt-4 px-4">
@@ -253,20 +181,19 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                                 </div>
                             </div>
                             <div class="d-flex align-items-center pt-3">
-                                
                                 <div class="w-100 ms-3">
-                                <div class="d-flex w-100 justify-content-between mt-4">
+                                <div class="d-flex w-100 justify-content-between mt-3">
                                         <h6 class="mb-2">DELVE-PCG WebTeam</h6>
-                                        <small>UPDATE-Start of Q2, 2025</small>
+                                        <small>UPDATE-2025.05.04.</small>
                                     </div>
-                                    <span>Now you can finally check out other versions of the game, on the "Other Versions" tab. As well as a working settings menu, where you can change your password, username and can deactivate your account. (Careful with the last one!) </span>
+                                    <span>We have finally finished the site. Have fun playing DELVE-PCG! </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-secondary rounded p-4">
-                        <h6 class="mb-0">You can already BETA-TEST our little game's newest version here:</h6>
+                        <h6 class="mb-0">You can play the game's newest version here:</h6>
                         
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <a href="download.php" class="downloadbtn">

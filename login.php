@@ -60,13 +60,6 @@ if (isset($_COOKIE['remember_me']) && isset($_COOKIE['remember_user'])) {
         <a href="forgotten_password.php" title="forgotten_password">Forgot your password?</a>
       </label>
     </div>
-    <div id="remember">
-      <label for="remember_me">  
-      <input type="checkbox" name="remember_me" class="remember" id="remember_me"
-      <?php if (isset($_COOKIE['remember_me']) && $_COOKIE['remember_me']) echo 'checked';?> /> 
-        <p id="white-text2">Remember me</p>
-      </label>
-    </div>
         <button type="submit" id="gomb">Log in</button>
     <p id="white-text3">Don't have an account? <a href="index.php">Register here</a></p>
     </form>

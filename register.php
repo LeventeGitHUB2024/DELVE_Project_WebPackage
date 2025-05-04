@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute(['username' => $username, 'email' => $email, 'password' => $hashedPassword]);
     
     // Sikeres regisztráció után átirányítás
-    header("Location: success.php");
+    header("Location: login.php");
     exit;
 }
 

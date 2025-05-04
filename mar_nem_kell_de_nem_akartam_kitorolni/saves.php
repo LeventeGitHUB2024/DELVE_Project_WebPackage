@@ -155,48 +155,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         <!--  General Save Informations End -->
 
-
-        <!--- Specific Save Informations -->
-        <div class="container-fluid pt-4 px-4">
-            <div class="row g-4">
-                <div class="col-sm-12 col-xl-12">
-                    <div class="bg-secondary rounded h-100 p-4">
-                        <h6 class="mb-4"></h6>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>                                    
-                                    <th scope="col" class="fs-5 fw-bold">Specific Save Informations:</th>
-                                    <th></th>
-                                    <th></th>                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>                                    
-                                <th class="fw-bold">First save's date:</th>
-                                    <td></td>
-                                    <td><?php echo htmlspecialchars($user['Full_start_date']); ?></td>
-                                </tr>
-                                <th class="fw-bold">Save's name:</th>
-                                    <td></td>
-                                    <td><?php echo htmlspecialchars($user['save_name']); ?></td>
-                                </tr>
-                                <th class="fw-bold">Last time saved:</th>
-                                    <td></td>
-                                    <td><?php echo htmlspecialchars($user['save_time']); ?></td>
-                                </tr>
-                                <!--befejezni, öteltek az ötletek.txt-ben, ha van másik mentés akkor azt is kiírni...-->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Specific Save Informations End -->
-
-        
-
-
         <!-- Footer Start -->
         <div class="container-fluid pt-4 px-4">
             <div class="bg-secondary rounded-top p-4">
